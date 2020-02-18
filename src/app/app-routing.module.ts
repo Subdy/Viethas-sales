@@ -71,10 +71,6 @@ const routes: Routes = [
     loadChildren: './pages/categori/categori.module#CategoriPageModule'
   },
   {
-    path: 'product',
-    loadChildren: './pages/product/product.module#ProductPageModule'
-  },
-  {
     path: 'product-list',
     loadChildren:
       './pages/product-list/product-list.module#ProductListPageModule'
