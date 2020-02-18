@@ -148,10 +148,12 @@ const routes: Routes = [
   { path: 'system', loadChildren: './pages/system/system.module#SystemPageModule' },
   { path: 'return-cart', loadChildren: './pages/return-cart/return-cart.module#ReturnCartPageModule' },
   { path: 'sell-info', loadChildren: './pages/sell-info/sell-info.module#SellInfoPageModule' },
-  { path: 'return-bill', loadChildren: './pages/return-bill/return-bill.module#ReturnBillPageModule' }
-
-
-
+  { path: 'return-bill', loadChildren: './pages/return-bill/return-bill.module#ReturnBillPageModule' },
+  { path: 'notification', loadChildren: './pages/notification/notification.module#NotificationPageModule' },
+  { path: 'report-cost', loadChildren: './pages/report-cost/report-cost.module#ReportCostPageModule' },
+  { path: 'report-cost-detail', loadChildren: './pages/report-cost-detail/report-cost-detail.module#ReportCostDetailPageModule' },
+  { path: 'report-output', loadChildren: './pages/report-output/report-output.module#ReportOutputPageModule' },
+  { path: 'report-inventory', loadChildren: './pages/report-inventory/report-inventory.module#ReportInventoryPageModule' }
 ];
 
 @NgModule({

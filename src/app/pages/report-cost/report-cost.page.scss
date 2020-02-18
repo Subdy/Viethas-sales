@@ -1,0 +1,176 @@
+.content-report-cost{
+    .calendar{
+        height: 5vh;
+        margin: 1rem 0.5rem;
+        display: inline-flex;
+        .col1{
+            .div-cal1{
+                display: block;
+                span{
+                    margin-top: 0.6rem;
+                    float: left;
+                    margin-right: 0.5rem;
+                }
+                .cal1{
+                    border: 1px solid #eee;
+                    border-radius: 10vh;
+                    float: right;
+                    width: 27vw;
+                    height: 2.5rem;
+                    ion-datetime{
+                        min-height: 1.5rem;
+                        color: #00A859;
+                        font-size: 0.8rem;
+                        padding: 0!important;
+                        width: 23vw;
+                    }
+                    ion-icon{
+                        font-size: 1.2rem;
+                        padding-bottom: 0.7rem;
+                        padding-left: 0.2rem;
+                        color:#00A859;
+                    }
+                }
+            }
+        }
+        .col2{
+            .div-cal2{
+                display: block;
+                span{
+                    margin-top: 0.6rem;
+                    float: left;
+                    margin-left: 0.5rem;
+                    margin-right: 0.5rem;
+                }
+                .cal2{
+                    border: 1px solid #eee;
+                    border-radius: 10vh;
+                    float: right;
+                    width: 27vw;
+                    height: 2.5rem;
+                    ion-datetime{
+                        width: 23vw;
+                        min-height: 1.5rem;
+                        color: #00A859;
+                        font-size: 0.8rem;
+                        padding: 0!important;
+                    }
+                    ion-icon{
+                        font-size: 1.2rem;
+                        padding-bottom: 0.7rem;
+                        padding-left: 0.2rem;
+                        color:#00A859;
+                    }
+                }
+            }
+        }
+        .col3{
+            position: absolute;
+            right:2%;
+            .button-top{
+                font-size: 1rem;
+                border: none;
+                margin-top: 0.6rem;
+                width: 5.5rem;
+            }
+        }
+    }
+
+    @media screen and(min-height:1024px){
+        .calendar{
+            .col1{
+                padding-right: 4rem;
+                .cal1{
+                    width: 9rem!important;
+                    ion-icon{
+                        padding-bottom: 0.7rem;
+                        padding-left: 1rem!important;
+                    }
+                }
+            }
+            .col2{
+                .cal2{
+                    width: 9rem!important;
+                    ion-icon{
+                        padding-bottom: 0.7rem;
+                        padding-left: 1rem!important;
+                    }
+                }
+            }
+            .col3{
+                .button-top{
+                    width: 9rem;
+                }
+            }
+        }
+    }
+
+    .table{
+        display: block;
+        position:relative;
+        width: 100vw;
+        padding: 0.5rem;
+        .table-title{
+            width: 100%;
+            text-align: center;
+            th{
+                font-size: 1rem;
+                background-color: orange;
+                color: white;
+                padding: 0.5rem;
+            }
+        }
+        .container-table{
+            height: 67vh;
+            overflow-y: scroll;
+            .table-content{
+                width: 100%;
+                
+                td{
+                    text-align: center;
+                    padding: 0.5rem;
+                }
+            }
+        }
+        @media screen and(min-height:1024px){
+            .container-table{
+                height: 75vh;
+                .table-content{
+                    td{
+                        padding: 0.75rem;
+                    }
+                }
+            }
+        }
+    }
+    .footer-cost{
+        padding:0 1rem;
+        background-color: #00A859;
+        color:white;
+        position: fixed;
+        height: 12vh;
+        top: 88%;
+        left: 0;
+        width: 100%;
+        display: inline-flex;
+        .col1{
+            font-size: 1rem;
+            width: 50%;
+            line-height: 0.5rem;
+            .total-col{
+                color: #EE0000;
+                font-weight: 600;
+            }
+        }
+        .col2{
+            text-align: right;
+            font-size: 1em;
+            width: 50%;
+            line-height: 0.5rem;
+            .total-col{
+                color: #EE0000;
+                font-size: 600;
+            }
+        }
+    }
+}
