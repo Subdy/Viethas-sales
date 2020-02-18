@@ -1,0 +1,50 @@
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import {
+  Validators,
+  FormBuilder,
+  FormControl,
+  FormGroup
+} from "@angular/forms";
+import { FirebaseQuery } from "./../../database/firebase.database";
+@Component({
+  selector: "app-new-item",
+  templateUrl: "./new-item.page.html",
+  styleUrls: ["./new-item.page.scss"]
+})
+export class NewItemPage implements OnInit {
+  new_item_form: FormGroup;
+
+  constructor(
+    private router: Router,
+    public formBuilder: FormBuilder,
+    private firebaseQuery: FirebaseQuery
+  ) {}
+
+  ngOnInit() {
+    this.new_item_form = this.formBuilder.group({
+      title: new FormControl("", Validators.required),
+      description: new FormControl("", Validators.required)
+    });
+  }
+
+  goBack() {
+    this.router.navigate(["/home"]);
+  }
+
+  createItem(value) {
+    this.firebaseQuery
+      .createTask("data", value)
+      .then(
+        () => {
+          this.goBack();
+        },
+        err => {
+          console.log(err);
+        }
+      )
+      .catch(err => {
+        console.log(err);
+      });
+  }
+}

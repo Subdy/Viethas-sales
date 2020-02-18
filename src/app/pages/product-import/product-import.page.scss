@@ -1,0 +1,180 @@
+
+ion-content {
+    font-family: Arial, Helvetica, sans-serif;
+    .no-bill {
+        margin: 19px 12px;
+        text-align: center;
+        ion-button {
+            text-align: center;
+            --background: none;
+            --background-focused: none;
+            --background-activated: none;
+            --color: black;
+            --color-focused: black;
+            --color-activated: black;
+            border-radius: 100px;
+            -webkit-box-shadow: 0px 2px 8px -3px rgba(0,0,0,1);
+            -moz-box-shadow: 0px 2px 8px -3px rgba(0,0,0,1);
+            box-shadow: 0px 2px 8px -3px rgba(0,0,0,1);
+        }
+        margin-top: 30vh;
+        
+        
+    }
+
+    .bills {
+        margin: 0px 12px;
+        //text-align: center;
+        .add-bill {
+            text-align: center;
+            display: flex;
+            .add{
+            .btn_add {
+                background-color: #ffffff;
+                box-shadow: 1px 0px 3px 0px;
+                height: 2rem;
+                font-size: 1rem;
+                text-align: center;
+                border-radius: 15px;
+                position: relative;
+                top: 18%;
+                left: 3%;
+                transform: translate(50%);
+            }
+            }
+            .txt_select3 {
+                display: flex;
+                margin-inline-start: auto;
+                .txt_name_select3 {
+                  color: #35be1b;
+                  font-size: 2vh;
+                  display: -webkit-box;
+                  display: -webkit-flex;
+                  display: -ms-flexbox;
+                  display: flex;
+                  overflow: hidden;
+                  max-width: 100%;
+                  .select_1 {
+                    font-size: 2vh;
+                    color: #35be1b;
+                  }
+                }
+                .select {
+                  padding: 11px 8px 11px 0px;
+                }
+              }
+        }
+        .content_date{
+            padding: 1.5vh 1vh 0vh 1vh;
+            display: flex;
+            .date{
+                width: 50%;
+                .txt_date{
+                font-size: 2vh;
+                font-weight: bold;
+                }
+            .select_date{
+            
+                display: inline-block;
+                width: fit-content;
+                border: 1px solid gray;
+                border-radius:10px ;
+                padding: 0.6vh;
+                min-height: 0;
+                vertical-align: middle;
+                .item-inner{
+                    padding: 0;
+                }
+            }
+            ion-icon{
+                color: #098cf7;
+                font-size: 2.5vh;
+                // padding-left:1vw;
+                // vertical-align: middle;
+                margin: auto;
+            }
+            
+            ion-datetime{
+                // display: inline-flex;
+                font-size: 2vh; 
+                padding: 0vw 0vw 0vw 0vw;
+                text-align: center;
+                margin: auto;
+                .datetime-text {
+                  color: #35be1b;
+                }
+            }
+            }  
+            .date_start{
+               
+                display: flex;
+                justify-content: space-around;
+                .txt_date1{
+                   
+                    font-size: 2vh;
+                    margin: auto;
+                }
+                .select_date{
+                    color: #00A859;
+                    float: right;
+                    margin-right: 1.2vh;
+                    width: 70%;
+                }
+            }
+            .date_end{
+                display: flex;
+                justify-content: space-around;
+                .txt_date2{
+                   
+                    font-size:2vh;
+                    margin: auto;
+                }
+                .select_date{
+                    color: #00A859;
+                    float: right;
+                    margin-right: 0vh;
+                    width: 70%;
+                }
+            }      
+        }
+        // p {
+        //     font-size: 12px;
+        //     span {
+        //         color:red;
+        //     }
+        // }
+        .detail {
+            margin-top: 3vh;
+           .bill {
+                border-bottom: 1px rgba(112, 112, 112, 0.2) solid;
+                // margin-top: 8vh;
+                .info-bill{  
+                   display: flex;
+                   font-size: 15px;
+                   padding-bottom: 9px;
+               }
+               .status-bill{
+                   display: flex;
+                   font-size: 12px;
+                   padding-bottom: 7px;
+               }
+               .date {
+                   text-align: left;
+                   font-size: 12px;
+                   opacity: 0.5;
+                   padding-bottom: 7px;
+               }
+           } 
+           .left {
+            flex-grow: 1;
+            text-align: left;
+            }
+            .right {
+                flex-grow: 1;
+                text-align: right;
+            }
+        }
+        
+    }
+
+}

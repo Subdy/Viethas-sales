@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-searchbar placeholder="Tìm nhà cung cấp" color="light"></ion-searchbar>
+    <ion-buttons slot="end" (click)= "gotoproductaddsupplier()">
+      <ion-icon slot="end" name="add"></ion-icon>
+    </ion-buttons>
+      
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="conten_suppliers">
+  <div class="txt_suppliers">
+    <div class="txt_select1">
+      <ion-item>
+        <ion-select class="txt_name_select1" [(ngModel)]="os" submitText="Đồng Ý" cancelText="Thoát">
+          <ion-select-option class="select_1" value="dos">Tất Cả Sản Phẩm</ion-select-option>
+          <ion-select-option class="select_1" value="win95">Chưa Chọn</ion-select-option>
+          <ion-select-option class="select_1" value="win98">Đã Chọn</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <!-- <ion-virtual-scroll approxItemHeight="320px"> -->
+     
+      <ion-item class="txt_name1" *ngFor="let i of list_item">
+      <ion-label>
+        <div class="txt_name">
+          <h1>{{i.name}}</h1>
+         <div class="txt_icon">
+          <ion-icon  name="arrow-forward"></ion-icon>
+         </div>
+        </div>
+        <div class="txt_id_smat">
+          <h2>{{i.smatphone}}</h2>
+         <div class="txt_gmail">
+          <p>{{i.gmail}}</p>
+         </div>
+        </div>
+      </ion-label>
+    </ion-item>
+
+    <!-- </ion-virtual-scroll> -->
+  </div>
+  
+</ion-content>

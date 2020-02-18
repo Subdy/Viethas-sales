@@ -1,0 +1,52 @@
+.conten_suppliers{
+    .txt_suppliers{
+        .txt_select1{
+            display: flex;
+            justify-content: flex-end;
+            .txt_name_select1{
+              color: #35be1b;
+              font-size: 2vh;
+              display: -webkit-box;
+              display: -webkit-flex;
+              display: -ms-flexbox;
+              display: flex;
+              overflow: hidden;
+              max-width: 100%;
+              .select_1 {
+                font-size: 2vh;
+                color: #35be1b;
+              }
+            }
+            .select {
+              padding: 11px 8px 11px 0px;
+            }
+          }
+        //   #myFixZone {
+        //     height: 50vh;
+        // }
+      .txt_name1{
+          .txt_name{
+              display: flex;
+              justify-content: space-between;
+                h1{
+                    font-size: 2vh;
+                }
+                .txt_icon{
+                    font-size: 3vh;
+                }
+            }
+          .txt_id_smat{
+              display: flex;
+              justify-content: space-between;
+                h2{
+                    font-size: 2vh;
+                }
+              .txt_gmail{
+                p{
+                    font-size: 2vh;
+                }
+              }
+            }
+      }  
+    }
+}

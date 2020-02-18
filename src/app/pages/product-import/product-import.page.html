@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-searchbar placeholder="Tìm tên, mã, barcode sản phẩm" color="light"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class = "no-bill" >
+    <ion-button (click)="gotoproductsupplier()" >
+      <ion-icon name="add"></ion-icon>
+      Tạo đơn nhập hàng
+    </ion-button>
+    <p>Bạn chưa có đơn hàng nào</p>
+  </div>
+
+  <div class="bills" style="display: none;" >
+    <div class="add-bill">
+      <div class="add">
+        <button class="btn_add" (click)="gotoproductsupplier()">
+          +Tạo đơn nhập hàng
+        </button>
+      </div>
+     
+      <div class="txt_select3">
+        <ion-item>
+          <ion-select class="txt_name_select3" [(ngModel)]="os" submitText="Đồng Ý" cancelText="Thoát">
+            <ion-select-option class="select_1" value="dos">A-Z</ion-select-option>
+            <ion-select-option class="select_1" value="win95">Z-A</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+    </div>
+    <div class="content_date">
+      <div class="date date_start">
+         <span class="txt_date1">Từ:</span>
+         <div ion-item no-lines class="select_date">
+            <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="startDay"></ion-datetime>
+            <!-- <ion-icon item-content name="calendar" slot="end"></ion-icon> -->
+         </div>
+       </div>
+      <div class="date date_end">
+         <span class="txt_date2">Đến:</span>
+         <div ion-item no-lines class="select_date">
+            <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="endDay"></ion-datetime>
+            <!-- <ion-icon item-content name="calendar" slot="end"></ion-icon> -->
+         </div>
+      </div>
+      <span class="clearfix"></span>
+   </div>
+    <!-- <p>Tổng <span>{{ number }}</span> đơn hàng trong ngày</p> -->
+    
+    <ion-virtual-scroll [items] = "bills" >
+      <div class="detail" *virtualItem="let item">
+        <div class="bill">
+          <div class = "info-bill">
+            <div class = "left"><b>{{item.id_bill}}</b></div>
+            <div class = "right" style="color:#00A859"><b>{{item.cost}}</b></div>
+          </div>
+          <div class = "status-bill">
+            <div class = "left">{{item.customer}}</div>
+            <!-- <div class = "right">{{item.status}}</div> -->
+            <div class = "date">{{item.date | date: 'dd/MM/yyyy hh:mm'}}</div>
+          </div>
+        
+        </div>
+      </div>
+    </ion-virtual-scroll>
+        
+  </div>
+</ion-content>
