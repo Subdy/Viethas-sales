@@ -15,9 +15,11 @@ export class ProductPage implements OnInit {
   }
   gotoproductlist(){
     this.router.navigate(['/product-list']);
-    
   }
   gotoproductimport(){
     this.router.navigate(['/product-import']);
+  }
+  gotoopeningstock(){
+    this.router.navigate(['/opening-stock']);
   }
 }

@@ -57,6 +57,8 @@ export class LoginPage implements OnInit {
       )
     });
   }
+  resetPassword() {
+  }
   change() {
     if (this.variable === "text") {
       this.variable = "password";
