@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ProductImportAddSuppliersPage } from './product-import-add-suppliers.page';
+import { ProductImportScan2Page } from './product-import-scan2.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: ProductImportAddSuppliersPage
+    component: ProductImportScan2Page
   }
 ];
 
@@ -19,9 +19,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ProductImportAddSuppliersPage]
+  declarations: [ProductImportScan2Page]
 })
-export class ProductImportAddSuppliersPageModule {}
+export class ProductImportScan2PageModule {}

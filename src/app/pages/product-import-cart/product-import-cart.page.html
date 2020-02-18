@@ -4,8 +4,8 @@
       <ion-back-button text=""></ion-back-button>
     </ion-buttons>
       <ion-searchbar placeholder="Tìm tên, mã, barcode sản phẩm"></ion-searchbar>
-    <ion-buttons slot="end" style="font-size: 2rem;">
-      <ion-icon name="checkmark"></ion-icon>
+    <ion-buttons slot="end" style="font-size: 2rem;" (click)="gotoCreateProduct()">
+      <ion-icon name="add"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -17,10 +17,10 @@
 <div class="txt_list_name">
   <div class="txt_supplier_name">
     <ion-label>Nhà Cung Cấp</ion-label>
-    <ion-label><span>Adidas-098765431</span></ion-label>
+    <ion-label><span>{{ supplier.name }} - {{ supplier.phone }}</span></ion-label>
   </div>
   <div class="scroll" scrollX=“true” scrollEvents=“true” scrollY=“false” style="height: 250px;">
-    <ion-item *ngFor="let i of list_supplier">
+    <ion-item *ngFor="let i of list_product">
       <button class="icon"><ion-icon name="close"></ion-icon></button>
     <ion-label>
       <h3 class="name_title1">{{i.name}}</h3>

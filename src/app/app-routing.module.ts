@@ -140,6 +140,11 @@ const routes: Routes = [
     loadChildren:
       './pages/system-printer/system-printer.module#SystemPrinterPageModule'
   },
+  { path: 'opening-stock',
+    loadChildren: './pages/opening-stock/opening-stock.module#OpeningStockPageModule' },
+  { path: 'product-import-scan2', loadChildren: './pages/product-import-scan2/product-import-scan2.module#ProductImportScan2PageModule'},
+  { path: 'product-import-add-product2',
+    loadChildren: './pages/product-import-add-product2/product-import-add-product2.module#ProductImportAddProduct2PageModule' },
   { path: 'system', loadChildren: './pages/system/system.module#SystemPageModule' },
   { path: 'return-cart', loadChildren: './pages/return-cart/return-cart.module#ReturnCartPageModule' },
   { path: 'sell-info', loadChildren: './pages/sell-info/sell-info.module#SellInfoPageModule' },
