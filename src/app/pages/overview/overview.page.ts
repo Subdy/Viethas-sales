@@ -19,7 +19,7 @@ export class OverViewPage {
   }
   createBarChart() {
     var sizeHeight = screen.height;
-    var fontSize = sizeHeight / 100 + 3;
+    var fontSize = sizeHeight / 100 + 4;
     console.log(fontSize);
     Chart.defaults.global.defaultFontSize = fontSize;
     Chart.defaults.global.tooltips.enabled = false;
@@ -67,10 +67,10 @@ export class OverViewPage {
         },
         layout: {
           padding: {
-            left: 0,
-            right: 0,
+            left: 5,
+            right: 5,
             bottom: 0,
-            top: 20
+            top: 0
           }
         }
       }

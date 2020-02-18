@@ -4,32 +4,52 @@
         padding: 0 !important;
         .row1 {
             height: 45%;
-            padding: 1.3125rem !important;
-            .col1 {
-                padding-left: 1.3125rem;
-                position: relative;
-                height: 6vh;
-                line-height: 3vh;
-                .col1-total {
+            padding: 1.3125rem 1.3125rem 0.5rem 1.3125rem !important;
+            .col1-r1{
+                padding: 0 1.5rem;
+                h2{
+                    margin: 0 0 0.4rem 0 !important;
                     font-size: 1rem;
-                    color: #777777;
                 }
-                .col1-bill {
-                    font-size: 0.8rem;
-                    color: #444444;
+                h4{
+                    margin: 0!important;
+                    font-size: 0.9rem;
                 }
             }
-            .col3 {
-                margin: 0.5rem 0vh;
-                .button-top{
-                    padding: 0.2rem;
-                    background-color: #00A859;
-                    color:white!important;
-                    font-size: 0.8rem;
+            .col2-r1{
+                padding: 0 1rem 0 0;
+                h2{
+                    margin: 0 0 0.4rem 0 !important;
+                    font-size: 1rem;
                 }
+                h4{
+                    margin: 0!important;
+                    font-size: 0.9rem;
+                }
+            }
+            .col3-r1{
+                position: absolute;
+                right:3%;
+                width: 30vw;
+                margin-top: 0.3rem;
+                ion-item{
+                    height: 2rem;
+                    position: relative;
+                    border: 2px solid #00A859;
+                    ion-select{
+                        position: absolute;
+                        transform: translate(0%,-85%);
+                        top: 50%;
+                        padding: 0!important;
+                        min-width: 22vw;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
 
-            }
-            .col4 {
+        .row6{
+            .col4{
                 height: 33vh;
                 width: 90%;
                 .ct3_bg {
@@ -44,6 +64,7 @@
                 }
             }
         }
+
         .row2 {
             padding: 0 1.2vw;
             height: 2.2rem;
@@ -55,7 +76,7 @@
                     float: right;
                     line-height: 1.5rem;
                 }
-                padding-right: 0px;
+                padding-right: 0.5rem;
             }
         }
         .row3 {
