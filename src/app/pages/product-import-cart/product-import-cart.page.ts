@@ -27,8 +27,12 @@ export class ProductImportCartPage implements OnInit {
   gotoCreateProduct() {
     let data: NavigationExtras = {
       state: this.supplier
-    }
+    };
     this.router.navigate(['/product-import-add-product'], data);
+  }
+
+  click() {
+    console.log("xxx");
   }
 
 
