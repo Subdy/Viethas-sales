@@ -1,7 +1,23 @@
+
+.error-message {
+    color: var(--ion-color-danger);
+}
+.popupContent{
+    margin-top: 20%;
+}
+
 .content_printer{
+    font-size: 1rem;
+    h3{
+        margin-left: 3vh;
+        font-weight: bold;
+    }
+    form{
+        margin-top: 10%;
+    }
    
     ion-card{
-        margin: 3vh;
+        
         border-radius: 3vh;
         .button_printer{
             margin: 3vh;
@@ -37,8 +53,8 @@
     .button_printer1{
         text-align: center;
         .add_printer1{
-            margin: 2vh;
-            border-radius: 10px;
+            margin: 12vh;
+            border-radius: 20px;
             font-size: 1rem;
             height: 2rem;
             width: 20vh;
