@@ -10,7 +10,7 @@
   <div class="list-full">
     <div class="searchbar">
       <div class="searchbar-tt">
-        <ion-searchbar (ionInput)="getItems" placeholder="Tìm Sản Phẩm">
+        <ion-searchbar  placeholder="Tìm Sản Phẩm">
         </ion-searchbar>
         <div class="txt-barcode">
           <ion-icon name="barcode"></ion-icon>
@@ -26,7 +26,7 @@
   <h1>Tổng <span  style="color: red;">{{ i.id}} </span> Sản Phẩm</h1>
   <div class="txt_select">
     <ion-item>
-      <ion-select class="txt_name_select" [(ngModel)]="os" submitText="Đồng Ý" cancelText="Thoát">
+      <ion-select class="txt_name_select" submitText="Đồng Ý" cancelText="Thoát">
         <ion-select-option class="select_1" value="dos">Tất Cả Sản Phẩm</ion-select-option>
         <ion-select-option class="select_1" value="win95">Chưa Chọn</ion-select-option>
         <ion-select-option class="select_1" value="win98">Đã Chọn</ion-select-option>
