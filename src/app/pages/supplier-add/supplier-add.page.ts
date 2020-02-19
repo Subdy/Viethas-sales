@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule} from '@angular/router';
-import {
-  Validators,
-  FormBuilder,
-  FormControl,
-  FormGroup
-} from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FirebaseQuery } from '../../database/firebase.database';
 import { NavController } from '@ionic/angular';
 @Component({
@@ -19,22 +14,22 @@ export class SupplierAddPage implements OnInit {
     private formBuilder: FormBuilder,
     private firebaseQuery: FirebaseQuery,
     private navCtrl: NavController) {
+      this.addSupplier = this.formBuilder.group({
+        name: ['', Validators.required],
+        phone: ['', Validators.required],
+        address: ['', Validators.required],
+        email: ['', Validators.required],
+        tax_number: ['', Validators.required],
+        policy: ['', Validators.required]
+      });
      }
 
   ngOnInit() {
-    this.addSupplier = this.formBuilder.group({
-      name: ['', Validators.required],
-      phone: ['', Validators.required],
-      address: ['', Validators.required],
-      email: ['', Validators.required],
-      tax_number: ['', Validators.required],
-      policy: ['', Validators.required]
-    });
   }
   createSupplier() {
     this.firebaseQuery.createTask('suppliers', this.addSupplier.value)
     .then(res => {
-      console.log("thanh cong");
+      //console.log(res);
       this.navCtrl.pop();
     }, err => {
       console.log('Error: ', err);
