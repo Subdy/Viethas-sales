@@ -149,7 +149,10 @@ const routes: Routes = [
   { path: 'report-cost', loadChildren: './pages/report-cost/report-cost.module#ReportCostPageModule' },
   { path: 'report-cost-detail', loadChildren: './pages/report-cost-detail/report-cost-detail.module#ReportCostDetailPageModule' },
   { path: 'report-output', loadChildren: './pages/report-output/report-output.module#ReportOutputPageModule' },
-  { path: 'report-inventory', loadChildren: './pages/report-inventory/report-inventory.module#ReportInventoryPageModule' }
+  { path: 'report-inventory', loadChildren: './pages/report-inventory/report-inventory.module#ReportInventoryPageModule' },
+  { path: 'supplier-list', loadChildren: './pages/supplier-list/supplier-list.module#SupplierListPageModule' },
+  { path: 'supplier-add', loadChildren: './pages/supplier-add/supplier-add.module#SupplierAddPageModule' },
+  { path: 'supplier-detail', loadChildren: './pages/supplier-detail/supplier-detail.module#SupplierDetailPageModule' },
 ];
 
 @NgModule({

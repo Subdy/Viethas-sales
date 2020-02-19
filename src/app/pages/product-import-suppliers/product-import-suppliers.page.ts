@@ -34,9 +34,10 @@ export class ProductImportSuppliersPage implements OnInit {
   }
   getDataSuppliers() {
     this.list_suppliers = new Array();
-    this.firebaseQuery.getTasks('suppliers').then(data => {
-      for (let i in data.docs) {
-        this.list_suppliers.push(data.docs[i].data());
+    this.firebaseQuery.getTasks('suppliers').then(res => {
+      for (let i in res.docs) {
+        this.list_suppliers.push(res.docs[i].data());
+        this.list_suppliers[this.list_suppliers.length - 1].id = res.docs[i].id; 
       }
     });
   }
