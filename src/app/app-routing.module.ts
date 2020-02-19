@@ -71,10 +71,6 @@ const routes: Routes = [
     loadChildren: './pages/categori/categori.module#CategoriPageModule'
   },
   {
-    path: 'product',
-    loadChildren: './pages/product/product.module#ProductPageModule'
-  },
-  {
     path: 'product-list',
     loadChildren:
       './pages/product-list/product-list.module#ProductListPageModule'
@@ -140,13 +136,23 @@ const routes: Routes = [
     loadChildren:
       './pages/system-printer/system-printer.module#SystemPrinterPageModule'
   },
+  { path: 'opening-stock',
+    loadChildren: './pages/opening-stock/opening-stock.module#OpeningStockPageModule' },
+  { path: 'product-import-scan2', loadChildren: './pages/product-import-scan2/product-import-scan2.module#ProductImportScan2PageModule'},
+  { path: 'product-import-add-product2',
+    loadChildren: './pages/product-import-add-product2/product-import-add-product2.module#ProductImportAddProduct2PageModule' },
   { path: 'system', loadChildren: './pages/system/system.module#SystemPageModule' },
   { path: 'return-cart', loadChildren: './pages/return-cart/return-cart.module#ReturnCartPageModule' },
   { path: 'sell-info', loadChildren: './pages/sell-info/sell-info.module#SellInfoPageModule' },
-  { path: 'return-bill', loadChildren: './pages/return-bill/return-bill.module#ReturnBillPageModule' }
-
-
-
+  { path: 'return-bill', loadChildren: './pages/return-bill/return-bill.module#ReturnBillPageModule' },
+  { path: 'notification', loadChildren: './pages/notification/notification.module#NotificationPageModule' },
+  { path: 'report-cost', loadChildren: './pages/report-cost/report-cost.module#ReportCostPageModule' },
+  { path: 'report-cost-detail', loadChildren: './pages/report-cost-detail/report-cost-detail.module#ReportCostDetailPageModule' },
+  { path: 'report-output', loadChildren: './pages/report-output/report-output.module#ReportOutputPageModule' },
+  { path: 'report-inventory', loadChildren: './pages/report-inventory/report-inventory.module#ReportInventoryPageModule' },
+  { path: 'supplier-list', loadChildren: './pages/supplier-list/supplier-list.module#SupplierListPageModule' },
+  { path: 'supplier-add', loadChildren: './pages/supplier-add/supplier-add.module#SupplierAddPageModule' },
+  { path: 'supplier-detail', loadChildren: './pages/supplier-detail/supplier-detail.module#SupplierDetailPageModule' },
 ];
 
 @NgModule({

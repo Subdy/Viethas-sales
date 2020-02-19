@@ -27,4 +27,10 @@ export class ReportPage implements OnInit {
   gotostaff() {
     this.router.navigateByUrl('report-staff');
   }
+  gotoreportcost(){
+    this.router.navigateByUrl('report-cost');
+  }
+  gotoreportinventory(){
+    this.router.navigateByUrl('report-inventory');
+  }
 }

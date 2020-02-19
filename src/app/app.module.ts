@@ -17,7 +17,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, FormsModule,ReactiveFormsModule ,IonicModule.forRoot({mode: 'ios'}), AppRoutingModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule , IonicModule.forRoot({mode: 'ios'}), AppRoutingModule],
   providers: [
     StatusBar,
     SplashScreen,

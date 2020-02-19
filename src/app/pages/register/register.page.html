@@ -57,15 +57,15 @@
         
         <ion-item>
           <ion-label position="floating" color="medium">Email</ion-label>
-          <ion-input type="Email" tabindex="20" (keyup.enter)="moveFocus(b)" [(ngModel)]="username" required></ion-input>
+          <ion-input type="Email" tabindex="20" required></ion-input>
         </ion-item>
   
         <ion-item class="input-password-root">
             <div class="input-password">
                 <ion-label position="floating" color="medium">Mật khẩu</ion-label>
-                <ion-input no-padding  type="{{variable}}" required></ion-input>
+                <ion-input no-padding required></ion-input>
             </div>
-            <ion-icon class="input-password-icon"  name="{{icon}}" (click)="change()" slot="end"  color="medium"></ion-icon>              
+            <ion-icon class="input-password-icon"  slot="end"  color="medium"></ion-icon>              
         </ion-item>
 
         <ion-item>

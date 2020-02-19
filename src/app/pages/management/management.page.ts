@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-management',
   templateUrl: './management.page.html',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManagementPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
-
+  gotosupplier() {
+    this.router.navigateByUrl('supplier-list');
+  }
 }

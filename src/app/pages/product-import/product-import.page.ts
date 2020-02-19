@@ -10,7 +10,7 @@ export class ProductImportPage implements OnInit {
   startDay = '2019-12-07';
   endDay = "2019-12-08";
   private number = 0;
-  private bills = [
+  bills = [
     {
       id_bill: "HD01",
       cost: "2934793274",

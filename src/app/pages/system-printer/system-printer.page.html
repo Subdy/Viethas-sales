@@ -8,41 +8,36 @@
 </ion-header>
 
 <ion-content class="content_printer" padding>
-  <div
-      *ngIf="trigger_popup"
-      style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: gray; opacity: .5; z-index: 999"
-      (click)="triggerPopup()"
-    >
-    </div>
-    <ion-grid *ngIf="trigger_popup" style="position: absolute; width: 100%;">
-      <ion-row>
-        <ion-col></ion-col>
-        <ion-col size="10">
-          <ion-card
-            class="ion-padding"
-            style="z-index: 9999; background: white"
-          >
+  <div *ngIf="trigger_popup"
+    style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: gray; opacity: .5; z-index: 999"
+    (click)="triggerPopup()">
+  </div>
+  <ion-grid *ngIf="trigger_popup" style="position: absolute; width: 100%;">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col size="10">
+        <ion-card class="ion-padding" style="z-index: 9999; background: white">
           <div class="txt-card-tt1">
             <h5 class="ion-text-center">Bạn muốn xóa?</h5>
             <ion-grid class="popupContent">
               <ion-row>
                 <ion-col>
-                  <ion-button (click)="cancel()"  color="medium" style="width: 100%">HỦY</ion-button>
+                  <ion-button (click)="cancel()" color="medium" style="width: 100%">HỦY</ion-button>
                 </ion-col>
                 <ion-col>
-                  <ion-button (click)="deleteItem()"  color="warning" style="width: 100%">ĐỒNG Ý</ion-button>
+                  <ion-button (click)="deleteItem()" color="warning" style="width: 100%">ĐỒNG Ý</ion-button>
                 </ion-col>
               </ion-row>
             </ion-grid>
-            
-          </div>
-          </ion-card>
-        </ion-col>
-        <ion-col></ion-col>
-      </ion-row>
-    </ion-grid>
 
-    
+          </div>
+        </ion-card>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+
+
   <form [formGroup]="printer_form" (submit)="checkIp(printer_form.value)">
     <div>
       <h3>Thêm Máy In</h3>
@@ -93,11 +88,6 @@
 
       </ion-card>
     </div>
-
-
-
-
-
     <div class="button_printer1">
       <button class="add_printer1" type="submit">Lưu</button>
     </div>
