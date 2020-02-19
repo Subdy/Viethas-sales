@@ -32,7 +32,7 @@ export class ProductImportCartPage implements OnInit {
   }
 
   click() {
-    console.log("xxx");
+    
   }
 
 
