@@ -7,10 +7,10 @@ import { Chart } from "chart.js";
 })
 export class ReportCategoryPage{
   @ViewChild("pieCanvas",{static: false}) pieCanvas;
-  cao: number = 230;
+  cao: number = 200;
   doughnutChart: any;
   data_total: Array<any>= [45,23,44,65,54,33];
-  data_mau : Array<any> =  ["red", "blue", "#97FFFF", "#8B8B83", "#F5FFFA", "#97FFFF"];
+  data_mau : Array<any> =  ["#FF9966", "#333399", "#00FF99", "#CCCC33", "#006699", "#FFA500"];
   data_chart : Array<any> = [
     {
       name : "Bao cao su",
@@ -58,7 +58,8 @@ export class ReportCategoryPage{
         datasets: [
           {
             data:this.data_total,
-            backgroundColor:this.data_mau
+            backgroundColor:this.data_mau,
+            borderWidth: 0.3
           }
         ]
       };
@@ -94,7 +95,7 @@ export class ReportCategoryPage{
                 var y = mid_radius * Math.sin(mid_angle);
   
                 ctx.fillStyle = "#444";
-                if (i == 1 || i == 3 ) {
+                if (i == 1 || i == 4 ) {
                   ctx.fillStyle = "#fff";
                 }
   

@@ -22,25 +22,25 @@ export class ReportRevenuePage {
   createBarChart() {
     var cxt = this.barChart.nativeElement.getContext("2d");
     var gradient = cxt.createLinearGradient(0, 0, 0, 170);
-    var sizeWidth = screen.width;
-    var fontSize = sizeWidth / 100 + 10;
+    var sizeHeight = screen.height;
+    var fontSize = sizeHeight / 100 + 4;
     Chart.defaults.global.defaultFontSize = fontSize;
     this.bars = new Chart(this.barChart.nativeElement, {
       type: "bar",
       data: {
-        labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        labels: ["6-8h", "8-10h", "10-12h", "12h-14h", "14-16h", "16-18h"],
         datasets: [
           {
             barPercentage: 0.7,
             label: "Doanh thu",
-            backgroundColor: "#00a859",
+            backgroundColor: "#FF9900",
             borderWidth: 1,
             data: [6, 4, 7, 3, 4, 6, 7]
           },
           {
             barPercentage: 0.7,
             label: "Lợi nhuận",
-            backgroundColor: "yellow",
+            backgroundColor: "#FFCCFF",
             borderWidth: 1,
             data: [5, 7, 6, 5, 6, 7, 8]
           }
@@ -86,10 +86,6 @@ export class ReportRevenuePage {
                 fontFamily: "Roboto",
                 fontStyle: "inherit",
                 padding: 2
-              },
-
-              gridLines: {
-                display: false
               }
             }
           ],
@@ -99,6 +95,9 @@ export class ReportRevenuePage {
                 fontSize: 9,
                 fontFamily: "Roboto",
                 fontStyle: "inherit"
+              },
+              gridLines: {
+                display: false
               }
             }
           ]

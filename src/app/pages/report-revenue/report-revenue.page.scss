@@ -3,13 +3,13 @@
     height: 100%;
     .general-content1 {
         position: relative;
-        height: 5vh;
-        margin-top: 2vh;
-        margin-bottom: 2vh;
-        width: 96vw;
-        margin-left: 2vw;
+        height: 4vh;
+        margin-top: 2.5vh;
+        margin-bottom: 1.5vh;
+        width: 76vw;
+        margin-left: 13vw;
         .chart-revenue{
-            background-color: #333333;
+            background-color: #999;
             border: 0px solid #eee;
             border-radius: 10vh;
             height: 100%;
@@ -20,7 +20,7 @@
                 text-align: center !important;
                 align-items: center;
                 justify-content: center;
-                min-height: 5vh;
+                min-height: 4vh;
                 border: none;
                 line-height: 5vh;
 
@@ -28,12 +28,12 @@
                 white-space: normal;
             }
             ion-segment-button.segment-button-checked{
-                background-color:#00BB00;
+                background-color:#00A859;
                 color: white;
                 border-radius: 10vh;
             }
             ion-segment-button.segment-button-checked:first-child{
-                background-color:#00BB00;
+                background-color:#00A859;
                 color: white;
                 border-radius: 10vh;
             }
@@ -41,12 +41,12 @@
     }
     .calendar{
         position: relative;
-        height: 5.5vh;
+        height: 4.6vh;
         .cal1{
-            height: 5vh;
-            width: 35vw;
-            border: 1px solid #eee;
-            box-shadow: 0vh 0.1vh 0vh 0.1vh #ddd;
+            height: 4.6vh;
+            width: 8rem;
+            border: 1px solid #ddd;
+            box-shadow: 0rem 0.1rem 0.3rem 0rem #eee;
             border-radius: 10vh;
             position: absolute;
             top: 50%;
@@ -56,22 +56,24 @@
                 padding-left: 0!important;
             }
             ion-datetime{
-                color: green;
+                color: #00A859;
                 padding: 0!important;
-                min-height: 5vh;
+                min-height: 4.6vh;
                 line-height: 4.6vh!important;
                 padding-bottom: 1.1vw!important;
+                font-size: 0.9rem;
             }
             ion-icon{
                 padding-left: 0.5vw;
                 padding-bottom: 1vh;
-                color: green;
+                color: #00A859;
+                font-size: 1.4rem;
             }
         }
     }
     .chart-bar{
         position: relative;
-        height: 65vh;
+        height: 64vh;
         width: 96%;
         .ct3_bg {
             position: absolute;
@@ -87,15 +89,20 @@
             }
         }
     }
+    .note-chart{
+        text-align: center;
+        font-size: 0.9rem;
+        font: 50%;
+    }
     .button{
-        margin-top: 2vh;
+        margin-top: 1.5rem;
         text-align: center;
         button{
             border-radius: 5vh;
             color: white;
-            height: 5vh;
-            background-color: orange;
-            font-size: 1.2rem;
+            padding: 0.5rem 1.2rem;
+            background-color: #FF9900;
+            font-size: 1.1rem;
         }
     }
 }

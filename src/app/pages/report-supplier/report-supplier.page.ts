@@ -6,41 +6,50 @@ import { Chart } from "chart.js";
   styleUrls: ["./report-supplier.page.scss"]
 })
 export class ReportSupplierPage {
-  @ViewChild("pieCanvas", { static: false }) pieCanvas;
-  cao: number = 230;
-  doughnutChart: any;
-  data_total: Array<any> = [45, 23, 44, 65, 54, 33];
-  data_mau: Array<any> = ["red", "blue", "#97FFFF", "#8B8B83", "#F5FFFA", "#97FFFF"];
+  @ViewChild("barChart", { static: false }) barChart;
+  bars: any;
+  data_name: Array<any> = [
+    "Adidas",
+    "Cocacola",
+    "Cti sextoy Vn",
+    "Cti phim",
+    "Công ti FPT",
+    "Công ti giày",
+    "Công ti hà ngủ tân",
+    "Việt nam store",
+    "Viethas phim",
+    "Lưu Tuấn Nghĩa",
+    "Mậu Dung Phục"
+  ];
   data_chart: Array<any> = [
     {
-      name: "Công ti Ngủ Tân",
-      total: 1234567,
-      color: "red"
+      name: "Hà Ngủ Tân",
+      total: 12
     },
     {
-      name: "Adidas",
-      total: 1234567,
-      color: "green"
+      name: "Nguyễn Thị Hồng Oanh",
+      total: 21
     },
     {
-      name: "Sextoy Vietnam",
-      total: 1234567,
+      name: "Kiều Phong",
+      total: 14,
       color: "blue"
     },
     {
-      name: "Ct Trí Sextoy",
-      total: 1234567,
-      color: "red"
+      name: "Dương Quá",
+      total: 18
     },
     {
-      name: "Cti Phương 2c",
-      total: 1234567,
-      color: "green"
+      name: "Lưu Tuấn Nghĩa",
+      total: 17
     },
     {
-      name: "Giường êm ái",
-      total: 1234567,
-      color: "blue"
+      name: "Mậu Dung Phục",
+      total: 12
+    },
+    {
+      name: "Trương Nũ Yên",
+      total: 23
     }
   ];
   constructor() {}
@@ -52,77 +61,64 @@ export class ReportSupplierPage {
     
   }
   createBarChart() {
-    var data = {
-      datasets: [
-        {
-          data: this.data_total,
-          backgroundColor: this.data_mau
-        }
-      ]
-    };
-    var pieOptions = {
-      events: false,
-      animation: {
-        duration: 500,
-        easing: "easeOutQuart",
+    var sizeHeight = screen.height;
+    var fontSize = sizeHeight / 100 + 5;
+    console.log(fontSize);
+    Chart.defaults.global.defaultFontSize = fontSize;
+    this.bars = new Chart(this.barChart.nativeElement, {
+      type: "horizontalBar",
+      data: {
+        labels: this.data_name,
+        datasets: [
+          {
+            barPercentage: 0.4,
+            label: "Doanh thu",
+            backgroundColor: "#FFA500",
+            data: [24, 23, 23, 21, 18, 19, 17, 18, 7, 5, 6]
+          }
+        ]
+      },
 
-        onComplete: function() {
-          var ctx = this.chart.ctx;
-          ctx.font = Chart.helpers.fontString(
-            Chart.defaults.global.defaultFontFamily,
-            "normal",
-            Chart.defaults.global.defaultFontFamily
-          );
-          ctx.textAlign = "center";
-          ctx.textBaseline = "bottom";
-
-          this.data.datasets.forEach(function(dataset) {
-            for (var i = 0; i < dataset.data.length; i++) {
-              var model =
-                  dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
-                total = dataset._meta[Object.keys(dataset._meta)[0]].total,
-                mid_radius =
-                  model.innerRadius +
-                  (model.outerRadius - model.innerRadius) / 2,
-                start_angle = model.startAngle,
-                end_angle = model.endAngle,
-                mid_angle = start_angle + (end_angle - start_angle) / 2;
-
-              var x = mid_radius * Math.cos(mid_angle);
-              var y = mid_radius * Math.sin(mid_angle);
-
-              ctx.fillStyle = "#444";
-              if (i == 1 || i == 3) {
-                ctx.fillStyle = "#fff";
-              }
-
-              var total_per = Math.round(dataset.data[i]);
-              var result;
-              if (total_per < 5) {
-                result = "";
-              } else {
-                result = String(total_per) + "%";
-              }
-              if (dataset.data[i] != 0) {
-                ctx.fillText(result, model.x + x, model.y + y + 10);
+      options: {
+        legend: {
+          display: true,
+          labels: {
+            fontSize: fontSize,
+          }
+        },
+        layout: {
+          padding: {
+            left: 5,
+            right: 5,
+            bottom: 0,
+            top: 0
+          }
+        },
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true,
+                fontSize: fontSize
+              },
+              gridLines: {
+                display: false
               }
             }
-          });
+          ],
+          xAxes: [
+            {
+              ticks: {
+                fontSize: fontSize,
+                suggestedMin: 0
+              },
+              gridLines: {
+                display: false
+              }
+            }
+          ]
         }
       }
-    };
-
-    //bai trước
-
-    var sizeHeight = screen.height;
-    var fontSize = sizeHeight / 100 + 10;
-    Chart.defaults.global.defaultFontSize = fontSize;
-    let ctx = this.pieCanvas.nativeElement;
-    ctx.height = this.cao;
-    this.doughnutChart = new Chart(this.pieCanvas.nativeElement, {
-      type: "pie",
-      data: data,
-      options: pieOptions
     });
   }
 }

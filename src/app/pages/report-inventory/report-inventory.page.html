@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button text=""></ion-back-button>
     </ion-buttons>
-    <ion-title style="text-align: center;">Report Inventory</ion-title>
+    <ion-title style="text-align: center;">Báo cáo theo nhập tồn</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -26,19 +26,13 @@
           <button>Xuất báo cáo</button>
         </div>
       </ion-col>
-      <ion-col size="3">
-        <ion-item class="col3-item">
-          <ion-select
-          class="col3-select"
-          value="brown"
-          okText="Đồng ý"
-          cancelText="Hủy"
-          >
-          <ion-select-option value="brown">Xuất nhập tồn</ion-select-option>
-          <ion-select-option value="blonde">Xuất hàng</ion-select-option>
-          <ion-select-option value="black">Nhập hàng</ion-select-option>
-          </ion-select>
-      </ion-item>
+      <ion-col size="3" class="r1-select">
+        <ion-select value="01" interface="popover">
+          <ion-select-option  value="01">Xuất hàng</ion-select-option>
+          <ion-select-option value="02">Nhập hàng</ion-select-option>
+          <ion-select-option value="03">Xuất nhập hàng</ion-select-option>
+          <ion-select-option value="04">Xuất nhập tồn</ion-select-option>
+      </ion-select>
       </ion-col> 
     </ion-row>
   </ion-grid>

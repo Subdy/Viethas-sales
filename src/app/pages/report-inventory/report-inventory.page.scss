@@ -4,12 +4,12 @@
             position: relative;
             .title{
                 font-size: 1rem;
-                margin: 2vw 0vw 2vw 1vw;
+                margin: 3vw 2vw 2vw 2vw;
             }
             .time{
                 margin: 2vw 0vw 2vw 1vw;
                 display: inline-flex; 
-                width: 18vw;
+                width: 10rem;
                 border: 1px solid #eee;
                 box-shadow: 0vh 0.1vh 0vh 0.1vh #ddd;
                 border-radius: 10vh;
@@ -24,14 +24,22 @@
                     @media only screen and (min-width: 600px)  {
                         ion-datetime{
                             font-size: 0.9rem;
-                            line-height: 7vh!important;
+                            line-height: 3vh!important;
                         }
                     }
                     ion-icon{
                         font-size: 1.4rem;
                         padding-left: 0.5vw;
-                        padding-bottom: 1vh;
+                        padding-bottom: 2vh;
                         color: green;
+                    }
+                    @media only screen and (min-width: 1024px){
+                        ion-datetime{
+                            line-height: 7vh!important;
+                        }
+                        ion-icon{
+                            padding-bottom: 1vh;
+                        }
                     }
                 }
                 item-native{
@@ -50,12 +58,17 @@
                 padding: 1.4vw;
             }
         }
-        .col3-item{
-            margin: 1vw;
-            .col3-select{
-                min-width: 17vw;
-                font-size: 0.9rem;
-                padding: 2vh 1vh 1vh 0vh;
+        .r1-select{
+            ion-select{
+                width: auto;
+                float: right;
+                font-size: 1rem;
+                margin: 0.75rem 0vw 2vw 0;
+            }
+        }
+        @media screen and (min-width:1024px){
+            ion-select{
+                margin: 1.7rem 0vw 2vw 0!important;
             }
         }
     }

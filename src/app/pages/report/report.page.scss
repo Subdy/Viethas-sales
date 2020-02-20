@@ -2,7 +2,7 @@
 .content-report{  
     .container{
         .row-report{
-            height: 25vh;
+            height: 27vh;
             .content-row{
                 position: relative;
                 .txt-title1{
@@ -28,7 +28,7 @@
                                 font-weight: 600;
                                 margin-top: 1.5vh;
                                 padding: 0 2vh;
-                                color: #222;
+                                color: black;
                         }     
                     }
                 }      
@@ -57,11 +57,11 @@
                     .txt-card-tt1{   
                         .card-title {
                             text-align: center;
-                        font-size: 2vh;
+                            font-size: 2vh;
                             font-weight: 600;
-                        margin-top: 3vh;
-                        color: #222;
-                                    }
+                            margin-top: 3vh;
+                            color: black;
+                        }
                     }
                     
                 }
