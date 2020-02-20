@@ -13,11 +13,11 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule, FormsModule, NgControl } from '@angular/forms';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
-
+import { IonicStorageModule } from '@ionic/storage';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule , IonicModule.forRoot({mode: 'ios'}), AppRoutingModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule , IonicModule.forRoot({mode: 'ios'}), AppRoutingModule, IonicStorageModule.forRoot()],
   providers: [
     StatusBar,
     SplashScreen,

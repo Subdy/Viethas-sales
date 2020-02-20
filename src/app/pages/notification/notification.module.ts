@@ -7,10 +7,13 @@ import { IonicModule } from '@ionic/angular';
 
 import { NotificationPage } from './notification.page';
 
+
 const routes: Routes = [
   {
     path: '',
     component: NotificationPage
+
+    
   }
 ];
 
@@ -21,6 +24,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
+
   declarations: [NotificationPage]
 })
 export class NotificationPageModule {}
