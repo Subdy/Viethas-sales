@@ -16,7 +16,7 @@
     <div class="txt_name_2">
     <ion-item class="txt_item1">
       <ion-label class="name_1">Tên Sản Phẩm</ion-label>
-      <ion-input type="text" formControlName="name"></ion-input>
+      <ion-input type="text" formControlName="name" ></ion-input>
     </ion-item>
     <ion-item class="txt_item1">
       <ion-label class="name_1">Mã Sản Phẩm/SKU</ion-label>
@@ -24,7 +24,7 @@
     </ion-item>
     <ion-item class="txt_item1">
       <ion-label class="name_1">Barcode</ion-label>
-      <ion-input type="text" formControlName="barcode"></ion-input>
+      <ion-input type="number" formControlName="barcode" required></ion-input>
       <ion-icon (click)="scan()" name="barcode"></ion-icon>
     </ion-item>
     <ion-item class="txt_item1">
@@ -41,11 +41,11 @@
     </ion-item>
     <ion-item class="txt_item1">
       <ion-label class="name_1">Giá Nhập</ion-label>
-      <ion-input type="text" formControlName="price_import"></ion-input>
+      <ion-input type="number" formControlName="price_import" ></ion-input>
     </ion-item>
     <ion-item class="txt_item1">
       <ion-label class="name_1">Giá Bán</ion-label>
-      <ion-input type="text" formControlName="price"></ion-input>
+      <ion-input type="number" formControlName="price" ></ion-input>
     </ion-item>
     <ion-item class="txt_item1">
       <ion-label class="name_1">Phân Loại</ion-label>
@@ -65,7 +65,7 @@
       </ion-item>
   </div>
   <div class="add_btn">
-    <button type="submit">>LƯU</button>
+    <button type="submit">LƯU</button>
   </div>
 </form>
 </ion-content>

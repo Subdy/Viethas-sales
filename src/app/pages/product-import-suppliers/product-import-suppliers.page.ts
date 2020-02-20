@@ -74,19 +74,19 @@ export class ProductImportSuppliersPage implements OnInit {
     this.trigger_popup = true;
   }
   deteleSupplier() {
-    this.storage.remove("bill");
-    this.storage.remove("soHD");
-    this.storage.remove("list_prod");
-    this.storage.remove("supplier");
-    this.storage.get("id_bill").then(res => {
-      this.firebaseQuery.deleteTask("bills", res).then(res => {
-          console.log(res);
-        }, err => {
-          console.log(err);
-        }).catch(err=> {
-          console.log(err);
-        })
-    });
+    this.storage.get("bill").then(res => {
+    this.firebaseQuery.deleteTask("bills", res.id).then(res => {
+        console.log(res);
+        this.storage.remove("bill");
+        this.storage.remove("soHD");
+        this.storage.remove("list_prod");
+        this.storage.remove("supplier");
+      }, err => {
+        console.log(err);
+      }).catch(err=> {
+        console.log(err);
+      })
+  });
     this.navCtrl.pop();
   }
   cancel(){

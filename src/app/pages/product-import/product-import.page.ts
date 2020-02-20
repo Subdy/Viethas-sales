@@ -11,14 +11,45 @@ export class ProductImportPage implements OnInit {
   startDay = '2019-12-07';
   endDay = "2019-12-08";
   number = 0;
-  show = true;
+  show = false;
   bills: Array<any>;
   constructor(
     private router:Router,
     private firebaseQuery: FirebaseQuery,
     private firebaseAuth: FirebaseAuth,
     private storage: Storage
-    ) {}
+    ) {
+      /* this.firebaseQuery.getTasks("warehouses").then(res => {
+        for (let item of res.docs) {
+          //this.firebaseQuery.deleteTask('warehouses', item.id);
+          console.log(item.data()); 
+        }
+      }); */
+      /* this.firebaseQuery.getTasks("bill_details").then(res => {
+        for (let item of res.docs) {
+          //this.firebaseQuery.deleteTask('bill_details', item.id);
+          console.log(item.data()); 
+        }
+      }); */
+      /* this.firebaseQuery.getTasks("products").then(res => {
+        for (let item of res.docs) {
+          //this.firebaseQuery.deleteTask('products', item.id);
+          console.log(item.data()); 
+        }
+      }); */
+      /* this.firebaseQuery.getTasks("bills").then(res => {
+        for (let item of res.docs) {
+          //this.firebaseQuery.deleteTask('bills', item.id);
+          console.log(item.data()); 
+        }
+      }); */
+      /* this.firebaseQuery.getTasks("suppliers").then(res => {
+        for (let item of res.docs) {
+          this.firebaseQuery.deleteTask('suppliers', item.id);
+          console.log(item.data()); 
+        }
+      }); */
+    }
 
   ionViewWillEnter() {
     this.getBill();
@@ -35,7 +66,7 @@ export class ProductImportPage implements OnInit {
           });
       }
       if(this.bills.length > 0 ) this.show = true;
-      console.log(this.bills);
+      //console.log(this.bills);
     }).catch(err=> {
       console.log(err);
     })
@@ -45,31 +76,18 @@ export class ProductImportPage implements OnInit {
   }
   exportSoHD() {
     let date = new Date();
-    if ((date.getMonth() + 1) < 10) {
-      const soHD =
-      date
-        .getFullYear()
-        .toString()
-        .slice(2, 4) + '0' +
-      (date.getMonth() + 1).toString() +
-      date.getUTCDate().toString() +
-      date.getHours().toString() +
-      date.getMinutes().toString() +
-      date.getSeconds().toString();
-      return soHD;
-    } else {
-      const soHD =
-      date
-        .getFullYear()
-        .toString()
-        .slice(2, 4) +
-      (date.getMonth() + 1).toString() +
-      date.getUTCDate().toString() +
-      date.getHours().toString() +
-      date.getMinutes().toString() +
-      date.getSeconds().toString();
-      return soHD;
-    }
+    const soHD =
+    date
+      .getFullYear()
+      .toString()
+      .slice(2, 4) +
+    ((date.getMonth() + 1).toString().length == 1 ? "0" + (date.getMonth() + 1).toString() : (date.getMonth() + 1).toString()) +
+    (date.getUTCDate().toString().length == 1 ? "0" +  date.getUTCDate().toString() : date.getUTCDate().toString())+
+    (date.getHours().toString().length == 1 ? "0" + date.getHours().toString() : date.getHours().toString()) +
+    (date.getMinutes().toString().length == 1 ? "0" + date.getMinutes().toString() : date.getMinutes().toString()) +
+    (date.getSeconds().toString().length == 1 ? "0" + date.getSeconds().toString() : date.getSeconds().toString());
+    return soHD;
+
   }
   gotoproductsupplier() {
     let bill_code = this.exportSoHD();

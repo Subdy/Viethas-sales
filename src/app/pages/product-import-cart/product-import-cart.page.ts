@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router, RouterModule, NavigationExtras } from '@angular/router';
 import { Storage } from '@ionic/storage';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 
 @Component({
   selector: 'app-product-import-cart',
@@ -21,7 +22,10 @@ export class ProductImportCartPage implements OnInit {
   supplier;
   show = false;
   constructor( private router: Router,
-    private storage: Storage) {
+    private storage: Storage,
+    private barcode: BarcodeScanner,
+    private firebaseQuery: FirebaseQuery
+    ) {
     this.supplier = this.router.getCurrentNavigation().extras.state;
     console.log(this.supplier);
     this.storage.get('list_prod').then(res => {
@@ -79,6 +83,16 @@ export class ProductImportCartPage implements OnInit {
   gotoProductConfirm() {
     this.storage.set("list_prod", this.list_product);
     this.router.navigateByUrl('product-import-confirm');
+  }
+
+
+  scan() {
+    this.barcode.scan().then(res => {
+      this.firebaseQuery.getTasks_Field("products", "barcode", res.text, "==")
+      .then(res=> {
+        console.log(res);
+      })
+    })
   }
 
 }
