@@ -27,7 +27,7 @@
       </div>
     </div>
     <!-- <ion-virtual-scroll approxItemHeight="320px"> -->
-    <div class="title_txt"> Tổng <span style="color: red;">{{items.length}}</span> nhà cung cấp</div>
+    <div class="title_txt"> Tổng <span style="color: red;">{{number}}</span> nhà cung cấp</div>
     <ion-list>
       <ion-item class="txt_name1" *ngFor="let i of dataShow" (click)="gotoSupplierDetail(i)">
         <ion-label>
