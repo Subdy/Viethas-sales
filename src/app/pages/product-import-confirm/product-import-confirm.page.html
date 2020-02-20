@@ -9,15 +9,15 @@
   <div class="txt_code">
     <ion-label>Mã Đơn Hàng</ion-label>
     <div class="txt_code1">
-      <ion-label>MS23456</ion-label>
+      <ion-label color="primary">{{bill_code}}</ion-label>
     </div>
   </div>
   <div class="content_date">
     <div class="date date_start">
        <span class="txt_date1">Ngày Nhập:</span>
        <div ion-item no-lines class="select_date">
-          <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="startDay"></ion-datetime>
-          <!-- <ion-icon item-content name="calendar" slot="end"></ion-icon> -->
+          <ion-label >{{startDay | date: 'dd/MM/yyyy'}}</ion-label>
+          <ion-icon name="calendar" slot="end"></ion-icon>
        </div>
      </div>
     <span class="clearfix"></span>
@@ -25,7 +25,7 @@
   <div class="txt_code">
     <ion-label>Nhà Cung Cấp</ion-label>
     <div class="txt_code1">
-      <ion-label>Adidas</ion-label>
+      <ion-label>{{supplier_name}}</ion-label>
     </div>
   </div>
   <div class="txt_name_4">
@@ -35,10 +35,10 @@
         <ion-label class="txt_name_title">
           <h3 class="name_title1">{{i.name}}</h3>
           <div class="txt_confirm_1">
-            <p>{{i.money}}</p>
+            <p>{{i.price | number: '1.0-0'}}</p>
             <p>X</p>
-            <p>{{i.amount}}</p>
-            <p class="name_total">{{i.total}}</p>
+            <p>{{i.number}}</p>
+            <p class="name_total">{{i.price * i.number | number: '1.0-0'}}</p>
           </div>
         </ion-label>
       </ion-item>
@@ -49,12 +49,12 @@
         </div>
         <div class="txt_total">
           <ion-label>Tổng</ion-label>
-          <ion-label>8</ion-label>
-          <ion-label>200,000</ion-label>
+          <ion-label>{{num_total}}</ion-label>
+          <ion-label>{{total | number: '1.0-0'}}</ion-label>
         </div>
       </div>
     </ion-card>
-    <div class="button_btn1">
+    <div class="button_btn1" (click)="save()">
       <button class="txt_btn1">Lưu</button>
     </div>
   </div>
