@@ -21,8 +21,7 @@ export class SupplierListPage implements OnInit {
   gotoSupplierAdd() {
     this.router.navigateByUrl("supplier-add");
   }
-
-  //search item by name
+  
   searchStaff(event) {
     this.dataShow = new Array();
     let value = this.change_alias(event.target.value.toLowerCase());

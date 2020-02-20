@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { StaffAddPage } from './staff-add.page';
+import { StaffListPage } from './staff-list.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: StaffAddPage
+    component: StaffListPage
   }
 ];
 
@@ -19,9 +19,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [StaffAddPage]
+  declarations: [StaffListPage]
 })
-export class StaffAddPageModule {}
+export class StaffListPageModule {}
