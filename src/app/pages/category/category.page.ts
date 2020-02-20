@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-categori',
-  templateUrl: './categori.page.html',
-  styleUrls: ['./categori.page.scss'],
+  selector: 'app-category',
+  templateUrl: './category.page.html',
+  styleUrls: ['./category.page.scss'],
 })
-export class CategoriPage implements OnInit {
+export class CategoryPage implements OnInit {
   searchQuery: string = '';
   items: string[];
   list_ds:Array<any>=[
