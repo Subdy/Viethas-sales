@@ -7,6 +7,7 @@ import { FirebaseQuery } from './../../database/firebase.database';
   styleUrls: ['./supplier-list.page.scss'],
 })
 export class SupplierListPage implements OnInit {
+  number: any;
   items: Array<any>;
   dataShow: Array<any>;
   search: any;
@@ -17,10 +18,10 @@ export class SupplierListPage implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.getData();
+    
   }
   ionViewWillEnter() {
-    this.getData();
+   this.getData();
   }
   gotoSupplierAdd() {
     this.router.navigateByUrl('supplier-add');
@@ -92,7 +93,9 @@ export class SupplierListPage implements OnInit {
           this.items = this.items.sort((n1, n2) => {
             if (n1.name > n2.name) return 1;
             return -1;
+
           });
+          this.number=res.docs.length;
           this.dataShow=this.items;
         },
         err => {
