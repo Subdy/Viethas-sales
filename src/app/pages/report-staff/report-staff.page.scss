@@ -3,13 +3,13 @@
     height: 100%;
     .general-content1 {
         position: relative;
-        height: 5vh;
-        margin-top: 1.5vh;
+        height: 4vh;
+        margin-top: 2.5vh;
         margin-bottom: 1.5vh;
-        width: 96vw;
-        margin-left: 2vw;
+        width: 76vw;
+        margin-left: 13vw;
         .chart-revenue{
-            background-color: #777777;
+            background-color: #999;
             border: 0px solid #eee;
             border-radius: 10vh;
             height: 100%;
@@ -20,7 +20,7 @@
                 text-align: center !important;
                 align-items: center;
                 justify-content: center;
-                min-height: 5vh;
+                min-height: 4vh;
                 border: none;
                 line-height: 5vh;
 
@@ -28,12 +28,12 @@
                 white-space: normal;
             }
             ion-segment-button.segment-button-checked{
-                background-color:#00BB00;
+                background-color:#00A859;
                 color: white;
                 border-radius: 10vh;
             }
             ion-segment-button.segment-button-checked:first-child{
-                background-color:#00BB00;
+                background-color:#00A859;
                 color: white;
                 border-radius: 10vh;
             }
@@ -41,61 +41,80 @@
     }
     .calendar{
         .col1{
+            display: inline-flex;
             span{
-                line-height: 5vh;
+                padding: 0 0.5rem;
+                line-height: 2.1rem;
                 font-size: 1rem;
             }
             .cal1{
-                width: 35vw;
+                width: 8rem;
                 border: 1px solid #eee;
                 box-shadow: 0vh 0.1vh 0vh 0.1vh #ddd;
                 border-radius: 10vh;
                 float: left;
-                height: 5vh;
-                item-native{
-                    padding-left: 0!important;
-                }
+                height: 2rem;
                 ion-datetime{
-                    color: green;
+                    font-size: 0.9rem;
+                    color: #00A859;
                     padding: 0!important;
-                    min-height: 5vh;
-                    line-height: 4.6vh!important;
-                    padding-bottom: 1.1vw!important;
+                    min-height: 2rem;
+                    line-height: 1.4rem!important;
                 }
                 ion-icon{
-                    padding-left: 0.5vw;
-                    padding-bottom: 1vh;
-                    color: green;
+                    font-size: 1.4rem;
+                    padding-left: 0.2rem;
+                    padding-bottom: 0.6rem;
+                    color: #00A859;
                 }
-            }
-            
+            }   
         }
         .col2{
+            display: inline-flex;
             span{
+                padding: 0 0.5rem;
+                line-height: 2.1rem;
                 font-size: 1rem;
-                line-height: 5vh;
             }
             .cal2{
+                width: 8rem;
+                border: 1px solid #eee;
                 box-shadow: 0vh 0.1vh 0vh 0.1vh #ddd;
-                float: right;
-                width: 35vw;
-                border: 1px solid #EEEEEE;
                 border-radius: 10vh;
-                height: 5vh;
+                float: right;
+                height: 2rem;
                 ion-datetime{
-                    color: green;
+                    font-size: 0.9rem;
+                    color: #00A859;
                     padding: 0!important;
-                    min-height: 5vh;
-                    line-height: 4.6vh!important;
-                    padding-bottom: 1.1vw!important;
+                    min-height: 2rem;
+                    line-height: 1.4rem!important;
                 }
                 ion-icon{
-                    color: green;
-                    padding-left: 0.5vw;
-                    padding-bottom: 1vh;
+                    font-size: 1.4rem;
+                    padding-left: 0.2rem;
+                    padding-bottom: 0.6rem;
+                    color: #00A859;
+                }
+            }   
+        }
+    }
+    @media screen and(min-height:1024px){
+        .calendar{
+            .col1{
+                display: inline-flex!important;
+                span{
+                    margin:0rem 3rem 0rem 8rem;
+                }
+            }
+            .col2{
+                display: inline-flex!important;
+                span{
+                    margin:0rem 3rem 0rem 0.5rem;
                 }
             }
         }
+
     }
     .chart-horizontal{
         position: relative;
@@ -121,7 +140,7 @@
         button{
             border-radius: 10vh;
             color: white;
-            padding: 1vh;
+            padding: 0.5rem 1rem;
             background-color: orange;
             font-size: 1rem;
         }

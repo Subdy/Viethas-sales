@@ -15,7 +15,7 @@
           <span class="title">Từ </span>
           <div class="time">
             <ion-item class="cal">
-              <ion-datetime displayFormat="DD-MM-YYYY" min="2005" max="2016" value="2008-09-02"></ion-datetime>
+              <ion-datetime displayFormat="DD/MM/YYYY" min="2005" max="2016" value="2008/09/02"></ion-datetime>
               <ion-icon name="calendar"></ion-icon>
             </ion-item>
           </div>
@@ -23,10 +23,10 @@
       </ion-col>
       <ion-col size="3">
         <div class="content-time">
-          <span class="title">Từ </span>
+          <span class="title">đến </span>
           <div class="time">
             <ion-item class="cal">
-              <ion-datetime displayFormat="DD-MM-YYYY" min="2005" max="2016" value="2008-09-02"></ion-datetime>
+              <ion-datetime displayFormat="DD/MM/YYYY" min="2005" max="2016" value="2008/09/02"></ion-datetime>
               <ion-icon name="calendar"></ion-icon>
             </ion-item>
           </div>
@@ -37,19 +37,13 @@
           <button>Xuất báo cáo</button>
         </div>
       </ion-col>
-      <ion-col size="3">
-        <ion-item class="col3-item">
-          <ion-select
-          class="col3-select"
-          value="brown"
-          okText="Đồng ý"
-          cancelText="Hủy"
-          >
-          <ion-select-option value="brown">Xuất nhập tồn</ion-select-option>
-          <ion-select-option value="blonde">Xuất hàng</ion-select-option>
-          <ion-select-option value="black">Nhập hàng</ion-select-option>
-          </ion-select>
-      </ion-item>
+      <ion-col size="3" class="r1-select">
+        <ion-select value="01" interface="popover">
+          <ion-select-option  value="01">Xuất hàng</ion-select-option>
+          <ion-select-option value="02">Nhập hàng</ion-select-option>
+          <ion-select-option value="03">Xuất nhập hàng</ion-select-option>
+          <ion-select-option value="04">Xuất nhập tồn</ion-select-option>
+      </ion-select>
       </ion-col> 
     </ion-row>
   </ion-grid>

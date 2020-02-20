@@ -61,6 +61,10 @@ export class ReportStaffPage {
     
   }
   createBarChart() {
+    var sizeHeight = screen.height;
+    var fontSize = sizeHeight / 100 + 5;
+    console.log(fontSize);
+    Chart.defaults.global.defaultFontSize = fontSize;
     this.bars = new Chart(this.barChart.nativeElement, {
       type: "horizontalBar",
       data: {
@@ -79,9 +83,7 @@ export class ReportStaffPage {
         legend: {
           display: true,
           labels: {
-            fontSize: 16,
-            fontFamily: "Roboto",
-            fontStyle: "normal"
+            fontSize: fontSize,
           }
         },
         layout: {
@@ -95,6 +97,10 @@ export class ReportStaffPage {
         scales: {
           yAxes: [
             {
+              ticks: {
+                beginAtZero: true,
+                fontSize: fontSize
+              },
               gridLines: {
                 display: false
               }
@@ -103,6 +109,7 @@ export class ReportStaffPage {
           xAxes: [
             {
               ticks: {
+                fontSize: fontSize,
                 suggestedMin: 0
               },
               gridLines: {

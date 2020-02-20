@@ -33,4 +33,7 @@ export class ReportPage implements OnInit {
   gotoreportinventory(){
     this.router.navigateByUrl('report-inventory');
   }
+  gotoreportoutput(){
+    this.router.navigateByUrl('report-output');
+  }
 }
