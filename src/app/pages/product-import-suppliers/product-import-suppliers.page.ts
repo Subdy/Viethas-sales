@@ -81,13 +81,13 @@ export class ProductImportSuppliersPage implements OnInit {
         this.storage.remove("soHD");
         this.storage.remove("list_prod");
         this.storage.remove("supplier");
+        this.navCtrl.pop();
       }, err => {
         console.log(err);
       }).catch(err=> {
         console.log(err);
       })
   });
-    this.navCtrl.pop();
   }
   cancel(){
     this.trigger_popup = false;
