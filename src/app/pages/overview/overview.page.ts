@@ -32,8 +32,8 @@ export class OverViewPage {
             label: "total",
             barPercentage: 0.3,
             data: [5, 3, 5, 6, 6, 5, 7, 6],
-            backgroundColor: "#009933",
-            borderColor: "#009933",
+            backgroundColor: "#00A859",
+            borderColor: "#00A859",
             borderWidth: 1
           }
         ]

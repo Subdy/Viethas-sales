@@ -4,31 +4,27 @@
             position: relative;
             .title{
                 font-size: 1rem;
-                margin: 2vw 0vw 2vw 1vw;
+                float: left;
+                margin: 1.5rem 0.4rem 0 0;
             }
             .time{
-                margin: 2vw 0vw 2vw 1vw;
+                margin: 2vw 0vw 2vw 0vw;
                 display: inline-flex; 
-                width: 18vw;
+                width: 7.5rem;
                 border: 1px solid #eee;
                 box-shadow: 0vh 0.1vh 0vh 0.1vh #ddd;
                 border-radius: 10vh;
                 height: 5vw;
                 .cal{
-                    padding-left: 1.5vw;
+                    border-radius: 1rem;
                     ion-datetime{
-                        font-size: 0.9rem;;
+                        font-size: 0.8rem;
                         color: green;
                         padding: 0!important;
-                    }
-                    @media only screen and (min-width: 600px)  {
-                        ion-datetime{
-                            font-size: 0.9rem;
-                            line-height: 7vh!important;
-                        }
+                        line-height: 3vh;
                     }
                     ion-icon{
-                        font-size: 1.4rem;
+                        font-size: 1.1rem;
                         padding-left: 0.5vw;
                         padding-bottom: 1vh;
                         color: green;
@@ -38,6 +34,25 @@
                     padding-left: 0!important;
                 }
                 
+            }
+        }
+        @media screen and (min-width:1024px){
+            .content-time{
+                .title{
+                    margin: 2rem 0.4rem 0 0;
+                }
+                .time{
+                    border-radius: 2rem;
+                    height: 4vw;
+                    .cal{
+                        ion-datetime{
+                            line-height: 5vh!important;
+                        }
+                        ion-icon{
+                            padding-bottom: 1vh;
+                        }
+                    }
+                }
             }
         }
         .button{
@@ -50,12 +65,17 @@
                 padding: 1.4vw;
             }
         }
-        .col3-item{
-            margin: 1vw;
-            .col3-select{
-                min-width: 17vw;
-                font-size: 0.9rem;
-                padding: 2vh 1vh 1vh 0vh;
+        .r1-select{
+            ion-select{
+                width: auto;
+                float: right;
+                font-size: 1rem;
+                margin: 0.75rem 0vw 2vw 0;
+            }
+        }
+        @media screen and (min-width:1024px){
+            ion-select{
+                margin: 1.7rem 0vw 2vw 0!important;
             }
         }
     }

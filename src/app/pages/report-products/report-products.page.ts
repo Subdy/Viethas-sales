@@ -8,39 +8,45 @@ import { Chart } from "chart.js";
 export class ReportProductsPage {
   @ViewChild("pieCanvas", { static: false }) pieCanvas;
 
-  cao: number = 210;
+  cao: number = 200;
   doughnutChart: any;
   data_total: Array<any> = [45, 23, 44, 65, 54, 33];
-  data_mau: Array<any> = ["red", "blue", "#97FFFF", "#8B8B83", "#F5FFFA", "#97FFFF"];
+  data_mau: Array<any> = ["#FF9966", "#333399", "#00FF99", "#CCCC33", "#006699", "#FFA500"];
   data_chart: Array<any> = [
     {
       name: "Công ti Ngủ Tân",
       total: 1234567,
+      code:"MA123A",
       color: "red"
     },
     {
       name: "Adidas",
       total: 1234567,
+      code:"MO0953",
       color: "green"
     },
     {
       name: "Sextoy Vietnam",
       total: 1234567,
+      code:"OU9965",
       color: "blue"
     },
     {
       name: "Ct Trí Sextoy",
       total: 1234567,
+      code:"TG6869",
       color: "red"
     },
     {
       name: "Cti Phương 2c",
-      total: 1234567,
+      total: 1234567333,
+      code:"HO7070",
       color: "green"
     },
     {
       name: "Giường êm ái",
       total: 1234567,
+      code:"PO233222",
       color: "blue"
     }
   ];
@@ -57,7 +63,8 @@ export class ReportProductsPage {
       datasets: [
         {
           data: this.data_total,
-          backgroundColor: this.data_mau
+          backgroundColor: this.data_mau,
+          borderWidth: 0.3
         }
       ]
     };
