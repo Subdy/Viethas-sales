@@ -1,7 +1,7 @@
 
 <ion-header>
   <ion-toolbar>
-    <ion-title>Thêm Nhân Viên</ion-title>
+    <ion-title>Chi Tiết Nhân Viên</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="conteiner_add_pro">
@@ -14,7 +14,7 @@
           <ion-icon name="add"></ion-icon>
         </ion-card>
       </div>
-      <form class="form" [formGroup]="validations_form" (ngSubmit)="createStaff(validations_form.value)">
+      <form class="form" [formGroup]="validations_form" (ngSubmit)="updateStaff(validations_form.value)">
         <div class="txt_name_2">
           <ion-item  class="txt_item1">
             <ion-label class="name_1" position="floating">Họ & tên</ion-label>
@@ -42,32 +42,14 @@
       </div>
         <ion-item  class="txt_item1">
           <ion-label class="name_1" position="floating">Email</ion-label>
-          <ion-input type="text" formControlName="email"></ion-input>
+          <ion-input type="text" formControlName="email" disabled="true"></ion-input>
         </ion-item>
         
-          <div class="validation-errors">
-            <ng-container *ngFor="let validation of validation_messages.email">
-                <div class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
-                    {{ validation.message }}
-                </div>
-            </ng-container>
-        </div>
-
         <ion-item  class="txt_item1">
           <ion-label class="name_1" position="floating">Password</ion-label>
-          <ion-input type="password" formControlName="password"></ion-input>
+          <ion-input type="password" formControlName="password" disabled="true"></ion-input>
         </ion-item>
         
-          <div class="validation-errors">
-            <ng-container *ngFor="let validation of validation_messages.password">
-                <div class="error-message" *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
-                    {{ validation.message }}
-                </div>
-            </ng-container>
-        </div>
-
-     
-         
        <ion-item class="txt_item1">
           <ion-label class="name_1" position="floating">Địa chỉ</ion-label>
           <ion-input type="text" formControlName="address"></ion-input>

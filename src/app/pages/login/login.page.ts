@@ -74,6 +74,7 @@ export class LoginPage implements OnInit {
       if (resp) {
         console.log(this.firebaseAuth.user);
         this.router.navigateByUrl("tabs");
+        
       }
     });
   }

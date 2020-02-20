@@ -160,7 +160,10 @@ const routes: Routes = [
   { path: 'bill-detail', loadChildren: './pages/bill-detail/bill-detail.module#BillDetailPageModule' },
   { path: 'sales-add', loadChildren: './pages/sales-add/sales-add.module#SalesAddPageModule' },
   { path: 'category-product-list', loadChildren: './pages/category-product-list/category-product-list.module#CategoryProductListPageModule' },
-  { path: 'category-choose', loadChildren: './pages/category-choose/category-choose.module#CategoryChoosePageModule' }
+  { path: 'category-choose', loadChildren: './pages/category-choose/category-choose.module#CategoryChoosePageModule' },
+  { path: 'staff-detail', loadChildren: './pages/staff-detail/staff-detail.module#StaffDetailPageModule' },
+  { path: 'staff-add', loadChildren: './pages/staff-add/staff-add.module#StaffAddPageModule' },
+  { path: 'staff-list', loadChildren: './pages/staff-list/staff-list.module#StaffListPageModule' }
 ];
 
 @NgModule({

@@ -11,7 +11,8 @@ export class ProductImportPage implements OnInit {
   startDay = '2019-12-07';
   endDay = "2019-12-08";
   number = 0;
-  show = false;
+  show1 = false;
+  show2= false;
   bills: Array<any>;
   constructor(
     private router:Router,
@@ -65,7 +66,10 @@ export class ProductImportPage implements OnInit {
             this.bills[i].supplier_name = res.data().name;
           });
       }
-      if(this.bills.length > 0 ) this.show = true;
+      if(this.bills.length > 0 ) {
+        this.show2 = true;
+        this.show1 = !this.show2;
+      }
       //console.log(this.bills);
     }).catch(err=> {
       console.log(err);
