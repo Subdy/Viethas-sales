@@ -1,34 +1,42 @@
 .content-report-cost{
     .calendar{
         height: 5vh;
-        margin: 1rem 0.5rem;
+        margin: 1rem 0.5rem 0.5rem 0.5rem;
         display: inline-flex;
         .col1{
             .div-cal1{
                 display: block;
                 span{
+                    font-size: 0.9rem;
                     margin-top: 0.6rem;
                     float: left;
-                    margin-right: 0.5rem;
+                    margin-right: 0.4rem;
                 }
                 .cal1{
-                    border: 1px solid #eee;
+                    height: 2rem;
+                    width: 7rem;
+                    border: 1px solid #ddd;
                     border-radius: 10vh;
-                    float: right;
-                    width: 27vw;
-                    height: 2.5rem;
+                    float:right;
+                    position: relative;
+                    item-native{
+                        padding-left: 0!important;
+                    }
                     ion-datetime{
-                        min-height: 1.5rem;
                         color: #00A859;
-                        font-size: 0.8rem;
                         padding: 0!important;
-                        width: 23vw;
+                        position: absolute;
+                        width: 6rem;
+                        top: 23%;
+                        left: 0;
+                        font-size: 0.8rem;
                     }
                     ion-icon{
-                        font-size: 1.2rem;
-                        padding-bottom: 0.7rem;
-                        padding-left: 0.2rem;
-                        color:#00A859;
+                        color: #00A859;
+                        right: 10%;
+                        top: 17%;
+                        position: absolute;
+                        font-size: 1.1rem;
                     }
                 }
             }
@@ -37,51 +45,57 @@
             .div-cal2{
                 display: block;
                 span{
+                    font-size: 0.9rem;
                     margin-top: 0.6rem;
                     float: left;
                     margin-left: 0.5rem;
-                    margin-right: 0.5rem;
+                    margin-right: 0.4rem;
                 }
                 .cal2{
-                    border: 1px solid #eee;
+                    height: 2rem;
+                    width: 7rem;
+                    border: 1px solid #ddd;
                     border-radius: 10vh;
-                    float: right;
-                    width: 27vw;
-                    height: 2.5rem;
+                    float:right;
+                    position: relative;
+                    item-native{
+                        padding-left: 0!important;
+                    }
                     ion-datetime{
-                        width: 23vw;
-                        min-height: 1.5rem;
                         color: #00A859;
-                        font-size: 0.8rem;
                         padding: 0!important;
+                        position: absolute;
+                        width: 6rem;
+                        top: 23%;
+                        left: 0;
+                        font-size: 0.8rem;
                     }
                     ion-icon{
-                        font-size: 1.2rem;
-                        padding-bottom: 0.7rem;
-                        padding-left: 0.2rem;
-                        color:#00A859;
+                        color: #00A859;
+                        right: 10%;
+                        top: 17%;
+                        position: absolute;
+                        font-size: 1.1rem;
                     }
                 }
             }
         }
         .col3{
             position: absolute;
-            right:2%;
-            .button-top{
-                font-size: 1rem;
-                border: none;
-                margin-top: 0.6rem;
-                width: 5.5rem;
+            right:0.5%;
+            ion-select{
+                font-size: 0.8rem;
             }
         }
     }
 
     @media screen and(min-height:1024px){
         .calendar{
+            margin: 1.5rem 0.5rem 0rem 0.5rem!important;
             .col1{
                 padding-right: 4rem;
                 .cal1{
-                    width: 9rem!important;
+                    width: 7rem!important;
                     ion-icon{
                         padding-bottom: 0.7rem;
                         padding-left: 1rem!important;
@@ -90,16 +104,16 @@
             }
             .col2{
                 .cal2{
-                    width: 9rem!important;
+                    width: rem!important;
                     ion-icon{
-                        padding-bottom: 0.7rem;
+                        padding-bottom: 0.7rem!important;
                         padding-left: 1rem!important;
                     }
                 }
             }
             .col3{
-                .button-top{
-                    width: 9rem;
+                ion-select{
+                    font-size: 1rem!important;
                 }
             }
         }
@@ -121,7 +135,7 @@
             }
         }
         .container-table{
-            height: 67vh;
+            height: 68vh;
             overflow-y: scroll;
             .table-content{
                 width: 100%;
@@ -134,7 +148,7 @@
         }
         @media screen and(min-height:1024px){
             .container-table{
-                height: 75vh;
+                height: 72vh;
                 .table-content{
                     td{
                         padding: 0.75rem;
@@ -170,6 +184,16 @@
             .total-col{
                 color: #EE0000;
                 font-size: 600;
+            }
+        }
+    }
+    @media screen and(min-height:1024px){
+        .footer-cost{
+            .col1{
+                line-height: 1rem;
+            }
+            .col2{
+                line-height: 1rem;
             }
         }
     }

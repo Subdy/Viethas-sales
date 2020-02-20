@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button text=""></ion-back-button>
     </ion-buttons>
-    <ion-title style="text-align: center;">Report Revenue</ion-title>
+    <ion-title style="text-align: center;">Báo cáo doanh thu/lợi nhuận</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -32,8 +32,11 @@
   </div>
   <div class="chart-bar">
     <div class="ct3_bg">
-      <canvas height="240" width="200" #barChart class="chart"></canvas>
+      <canvas height="240" width="240" #barChart class="chart"></canvas>
     </div>
+  </div>
+  <div class="note-chart">
+    <p><ion-icon style="color: #FF9900;" name="medical"></ion-icon>Chỉ xuất hiện tối đa 30 ngày</p>
   </div>
   <div class="button">
     <button>Xuất báo cáo</button>
