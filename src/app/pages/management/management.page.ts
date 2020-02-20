@@ -16,6 +16,9 @@ export class ManagementPage implements OnInit {
   gotosupplier() {
     this.router.navigateByUrl('supplier-list');
   }
+  gotoinventory() {
+    this.router.navigateByUrl('inventory');
+  }
   translateStaffList(){
     this.router.navigateByUrl('staff-list');
   }

@@ -52,16 +52,11 @@ export class ProductImportAddProductPage implements OnInit {
         SKU: ['', Validators.required],
         unit: ['', Validators.required],
         color: ['', Validators.required],
-        barcode: ['', Validators.required],
+        barcode: ['', Validators.compose([Validators.minLength(10), Validators.required])],
         price_import: ['', Validators.required],
         id_supplier: [this.supplier.name],
         allow_sell: [true]
       });
-      this.firebaseQuery.getTasks("employees").then(res => {
-        for (let item of res.docs) {
-          console.log(item.data());
-        }
-      })
     }
 
   ngOnInit() {
@@ -74,38 +69,41 @@ export class ProductImportAddProductPage implements OnInit {
     })
   }
   save() {
-    console.log(this.product.value);
-    //luu san pham chuyen di
-    this.firebaseQuery.createTask('products', {
-      id_category: this.product.value.id_category,
-      name: this.product.value.name,
-      size: this.product.value.size,
-      price: this.product.value.price,
-      img: this.thumbnail,
-      id_discount: this.product.value.id_discount,
-      SKU: this.product.value.SKU,
-      color: this.product.value.color,
-      unit: this.product.value.unit,
-      barcode: this.product.value.barcode,
-      allow_sell: this.product.value.allow_sell
-    }).then(res => {
-      console.log(res);
-      this.bill_detail.push({
+    if (this.product.value.barcode == '') {
+      alert('Vui lòng nhập barcode sản phẩm');
+    } else {
+      console.log(this.product.value);
+      //luu san pham chuyen di
+      this.firebaseQuery.createTask('products', {
+        id_category: this.product.value.id_category,
         name: this.product.value.name,
-        id: res.id,
-        id_bill: this.id_bill,
+        size: this.product.value.size,
         price: this.product.value.price,
-        price_import: this.product.value.import,
-        number: 1
+        img: this.thumbnail,
+        id_discount: this.product.value.id_discount,
+        SKU: this.product.value.SKU,
+        color: this.product.value.color,
+        unit: this.product.value.unit,
+        barcode: this.product.value.barcode,
+        allow_sell: this.product.value.allow_sell
+      }).then(res => {
+        console.log(res);
+        this.bill_detail.push({
+          name: this.product.value.name,
+          id: res.id,
+          id_bill: this.id_bill,
+          price: this.product.value.price,
+          price_import: this.product.value.price_import,
+          number: 1
+        });
+        this.storage.set('list_prod', this.bill_detail);
+        this.router.navigateByUrl('product-import-cart');
+      }, err => {
+        console.log('Error: ', err);
+      }).catch(err => {
+        console.log(err);
       });
-      this.storage.set('list_prod', this.bill_detail);
-      this.router.navigateByUrl('product-import-cart');
-    }, err => {
-      console.log('Error: ', err);
-    }).catch(err => {
-      console.log(err);
-    });
-    
+      }
   }
 
   openImagePicker(){

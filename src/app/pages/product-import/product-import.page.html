@@ -1,11 +1,11 @@
 <ion-header>
-  <ion-toolbar color="primary" *ngIf="!show">
+  <ion-toolbar color="primary" *ngIf="show1">
     <ion-buttons slot="start">
       <ion-back-button text=""></ion-back-button>
     </ion-buttons>
     <ion-title>Nhập Hàng</ion-title>
   </ion-toolbar>
-  <ion-toolbar *ngIf="show" class="toolbar">
+  <ion-toolbar *ngIf="show2" class="toolbar">
     <ion-buttons slot="start">
       <ion-back-button text=""></ion-back-button>
     </ion-buttons>
@@ -13,7 +13,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <div class = "no-bill" *ngIf="!show">
+  <div class = "no-bill" *ngIf="show1">
     <ion-button (click)="gotoproductsupplier()" >
       <ion-icon name="add"></ion-icon>
       Tạo đơn nhập hàng
@@ -21,7 +21,7 @@
     <p>Bạn chưa có đơn nhập hàng nào!</p>
   </div>
 
-  <div class="bills" *ngIf="show" >
+  <div class="bills" *ngIf="show2" >
     <div class="add-bill">
       <div class="add">
         <ion-button class="btn-add" (click)="gotoproductsupplier()" >
@@ -57,7 +57,7 @@
     <!-- <p>Tổng <span>{{ number }}</span> đơn hàng trong ngày</p> -->
     
     
-    <div class="scroll" scrollX=“true” scrollEvents=“true” scrollY=“false” style="height: 75vh; width: 95vw;">
+    <div class="scroll" scrollX=“true” scrollEvents=“true” scrollY=“false” style="height: 75vh;">
       <div class="detail" *ngFor="let item of bills">
         <div class="bill">
           <div class = "info-bill">

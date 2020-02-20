@@ -9,7 +9,6 @@ const routes: Routes = [
   { path: 'update-item', loadChildren: './pages/update-item/update-item.module#UpdateItemPageModule' },
   { path: 'register', loadChildren: './pages/register/register.module#RegisterPageModule' },
   { path: 'staff-add', loadChildren: './pages/staff-add/staff-add.module#StaffAddPageModule' },
-  {path: 'staff-list', loadChildren: './pages/staff-list/staff-list.module#StaffListPageModule'},
   {
     path: 'report-staff',
     loadChildren:
@@ -154,8 +153,17 @@ const routes: Routes = [
   { path: 'supplier-list', loadChildren: './pages/supplier-list/supplier-list.module#SupplierListPageModule' },
   { path: 'supplier-add', loadChildren: './pages/supplier-add/supplier-add.module#SupplierAddPageModule' },
   { path: 'supplier-detail', loadChildren: './pages/supplier-detail/supplier-detail.module#SupplierDetailPageModule' },
+  { path: 'inventory', loadChildren: './pages/inventory/inventory.module#InventoryPageModule' },
+  { path: 'sales', loadChildren: './pages/sales/sales.module#SalesPageModule' },
+  { path: 'sales-detail', loadChildren: './pages/sales-detail/sales-detail.module#SalesDetailPageModule' },
+  { path: 'sell-history', loadChildren: './pages/sell-history/sell-history.module#SellHistoryPageModule' },
+  { path: 'bill-detail', loadChildren: './pages/bill-detail/bill-detail.module#BillDetailPageModule' },
+  { path: 'sales-add', loadChildren: './pages/sales-add/sales-add.module#SalesAddPageModule' },
+  { path: 'category-product-list', loadChildren: './pages/category-product-list/category-product-list.module#CategoryProductListPageModule' },
+  { path: 'category-choose', loadChildren: './pages/category-choose/category-choose.module#CategoryChoosePageModule' },
   { path: 'staff-detail', loadChildren: './pages/staff-detail/staff-detail.module#StaffDetailPageModule' },
-
+  { path: 'staff-add', loadChildren: './pages/staff-add/staff-add.module#StaffAddPageModule' },
+  { path: 'staff-list', loadChildren: './pages/staff-list/staff-list.module#StaffListPageModule' }
 ];
 
 @NgModule({

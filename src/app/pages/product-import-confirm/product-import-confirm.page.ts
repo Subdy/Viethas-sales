@@ -62,6 +62,8 @@ export class ProductImportConfirmPage implements OnInit {
     data.total = this.total;
     delete data.id;
     console.log(data);
+    console.log(this.bill_detail);
+    console.log
     this.firebaseQuery.updateTask("bills", this.bill.id, data)
     .then(res => {
       console.log(res);
@@ -71,10 +73,21 @@ export class ProductImportConfirmPage implements OnInit {
     for (let item of this.bill_detail) {
       this.firebaseQuery.createTask("bill_details", {
         name: item.id,
-        id_bill: item.id_bill,
+        id_bill: this.bill.id,
         price: item.price,
         number: item.number
       }).then(res => {
+        console.log(res);
+      }).catch(err => {
+        console.log(err);
+      });
+      
+      this.firebaseQuery.createTask("warehouses", {
+        date: new Date(),
+        id_product: item.id,
+        price: item.price_import,
+        number: item.number
+      }).then(res=>{
         console.log(res);
         //delete storage
         this.storage.remove("bill");
@@ -82,9 +95,7 @@ export class ProductImportConfirmPage implements OnInit {
         this.storage.remove("list_prod");
         this.storage.remove("supplier");
         this.router.navigateByUrl('product-import');
-      }).catch(err => {
-        console.log(err);
-      });
+      })
     }
   }
 }
