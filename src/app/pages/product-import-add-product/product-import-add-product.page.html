@@ -7,10 +7,10 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="conteiner_add_pro">
-<form [formGroup]="product">
+<form [formGroup]="product" (ngSubmit)="save()">
   <div class="txt_list_addproduct">
-    <ion-card class="txt_icon">
-      <ion-icon name="add"></ion-icon>
+    <ion-card class="txt_icon" (click)="openImagePicker()">
+      <img [src]="thumbnail" alt="image">
     </ion-card>
   </div>
     <div class="txt_name_2">
@@ -24,8 +24,8 @@
     </ion-item>
     <ion-item class="txt_item1">
       <ion-label class="name_1">Barcode</ion-label>
-      <ion-input type="text"></ion-input>
-      <ion-icon name="barcode" formControlName="barcode"></ion-icon>
+      <ion-input type="text" formControlName="barcode"></ion-input>
+      <ion-icon (click)="scan()" name="barcode"></ion-icon>
     </ion-item>
     <ion-item class="txt_item1">
       <ion-label class="name_1">Đơn Vị</ion-label>
@@ -57,7 +57,7 @@
     </ion-item>
     <ion-item class="txt_item1">
       <ion-label class="name_1">Nhà cung cấp</ion-label>
-      <ion-input type="text" [ngModel]="this.supplier.name"></ion-input>
+      <ion-input type="text" formControlName="id_supplier"></ion-input>
     </ion-item>
       <ion-item class="txt_item1">
         <ion-label class="txt_allow">Cho Phép Bán</ion-label>
@@ -65,7 +65,7 @@
       </ion-item>
   </div>
   <div class="add_btn">
-    <button (click)="save()">LƯU</button>
+    <button type="submit">>LƯU</button>
   </div>
 </form>
 </ion-content>

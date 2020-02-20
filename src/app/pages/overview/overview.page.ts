@@ -1,5 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
 import { Chart } from "chart.js";
+import { FirebaseQuery } from './../../database/firebase.database';
 
 @Component({
   selector: "page-overview",
@@ -11,7 +12,9 @@ export class OverViewPage {
   bars: any;
   colorArray: any;
 
-  constructor() {
+  constructor(
+    private FirebaseQuery: FirebaseQuery
+  ) {
     console.log("overview");
   }
   ionViewDidEnter() {
