@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
-import { LoadingController, ToastController } from '@ionic/angular';
+import { LoadingController, NavController, ToastController } from '@ionic/angular';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
-import {FirebaseAuth, FirebaseImage} from '../../database/firebase.database'
-
+import {FirebaseAuth, FirebaseQuery,  FirebaseStorage, FirebaseImage  } from '../../database/firebase.database'
+import { Router, ActivatedRoute } from "@angular/router";
 
 import {
   Validators,
@@ -13,25 +13,24 @@ import {
 } from "@angular/forms";
 
 @Component({
-  selector: 'app-staff-add',
-  templateUrl: './staff-add.page.html',
-  styleUrls: ['./staff-add.page.scss'],
+  selector: 'app-staff-detail',
+  templateUrl: './staff-detail.page.html',
+  styleUrls: ['./staff-detail.page.scss'],
 })
-export class StaffAddPage implements OnInit {
+export class StaffDetailPage implements OnInit {
 
   public isSeeReport: boolean;
   public isChangeReport: boolean;
   public isIncome: boolean;
   public isChangeIcome: boolean;
   public isEnter: boolean;
-
+  item: any;
+  edit_item_form: FormGroup;
+  collection: string
   public modalName: string = "hhhhhhh";
   successMessage = "erroooooo";
-
   public date: any;
-  
   variable: string = "Name";
-  icon: string = "eye-off";
   img: any;
 
   validations_form: FormGroup;
@@ -75,6 +74,10 @@ export class StaffAddPage implements OnInit {
     private toastCtrl:ToastController,
     private webview: WebView,
     private firebaseAuth:FirebaseAuth,
+    private router: Router,
+    private route: ActivatedRoute,
+    private firebaseQuery: FirebaseQuery,
+    public navCtr: NavController,
     private firebaseImage: FirebaseImage
   ) {
     this.isSeeReport= false;
@@ -83,50 +86,69 @@ export class StaffAddPage implements OnInit {
     this.isChangeIcome= false;
     this.isEnter= false;
     this.img='';
+    this.collection = "employees";
     this.date = new Date().toISOString();
   }
 
 
   ngOnInit() {
+
+
+    this.item = this.router.getCurrentNavigation().extras.state.item;
+    this.edit_item_form = this.formBuilder.group({
+      title: new FormControl(this.item.title, Validators.required),
+      description: new FormControl(this.item.description, Validators.required)
+    });
+    console.log(this.item);
+
+    this.isSeeReport = this.item.data.isSeeReport;
+    this.isChangeReport = this.item.data.isChangeReport;
+    this.isIncome = this.item.data.isIncome;
+    this.isChangeIcome = this.item.data.isChangeIcome;
+    this.isEnter = this.item.data.isEnter;
+
     this.validations_form = this.formBuilder.group({
     
       name: new FormControl(
-        "@gmail.com",
+        this.item.data.name,
         Validators.compose([
           Validators.required,
           Validators.pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$")
         ])
       ),
       id_staff: new FormControl(
-        "",
+        this.item.data.code_staff,
         Validators.compose([
           Validators.compose([Validators.minLength(5), Validators.required])
         ])
       ),
       email: new FormControl(
-        "",
+        this.item.data.email,
         Validators.compose([Validators.minLength(5), Validators.required])
       ),
       password: new FormControl(
-        "",
+        this.item.data.password,
         Validators.compose([Validators.minLength(5), Validators.required])
       ),
       address: new FormControl(
-        "",
+        this.item.data.address,
         
       ),
       revenue: new FormControl(
-        "",
+        this.item.data.revenue,
        
       ),
       phone: new FormControl(
-        "",
+        this.item.data.phone,
+        Validators.compose([Validators.minLength(9), Validators.required])
+      ),
+      date: new FormControl(
+        this.item.data.date,
         Validators.compose([Validators.minLength(9), Validators.required])
       ),
     });
   }
 
-  
   openImagePicker(){
     this.imagePicker.hasReadPermission()
     .then((result) => {
@@ -179,6 +201,13 @@ export class StaffAddPage implements OnInit {
     return await loading.present();
   }
 
+
+createEmployee(value){
+  console.log(value);
+ 
+}
+  
+
 changeSeeRepor(){
     this.isSeeReport = !this.isSeeReport;
     console.log(this.isSeeReport);
@@ -200,18 +229,14 @@ changeEnter(){
   console.log(this.isEnter);
 }
 
-
 updateMyDate($event) {
   console.log($event); // --> wil contains $event.day.value, $event.month.value and $event.year.value
   this.date = $event;
 }
 
-  onClickSave(){
-    console.log(this.modalName);
-  }
-  createStaff(value){
+  updateStaff(value){
     
-    let user = {
+    let data = {
       name: value.name,
       phone: value.phone,
       email: value.email,
@@ -227,16 +252,31 @@ updateMyDate($event) {
       date: this.date,
       img: this.img
     };
-    this.firebaseAuth.doRegister_Employee(user)
+    console.log(data);
+    this.firebaseQuery.updateTask(this.collection, this.item.id, data)
     .then(res => {
-      console.log(res);
-      this.errorMessage = "";
-      this.successMessage = "Your account has been created. Please log in.";
+      console.log("success", res);
+      this.navCtr.pop();
     }, err => {
-      console.log(err);
+      console.log("erroooo", err);
       this.errorMessage = err.message;
       this.successMessage = "";
+    }).catch(error=>{
+      console.log(error)
     })
-    console.log(user)
+    // let data = {...item};
+    // data.new = val;
+    // delete data.id;
+    // this.firebaseQuery.updateTask(collection, id, data)
+    // .then(res=>{
+    //   ----------------
+    // },
+    // err=>{
+    //   ----------------
+    // })
+    // .catch(error=>{
+    //   ----------------
+    // })
+    
   }
 }

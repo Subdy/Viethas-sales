@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'update-item', loadChildren: './pages/update-item/update-item.module#UpdateItemPageModule' },
   { path: 'register', loadChildren: './pages/register/register.module#RegisterPageModule' },
   { path: 'staff-add', loadChildren: './pages/staff-add/staff-add.module#StaffAddPageModule' },
+  {path: 'staff-list', loadChildren: './pages/staff-list/staff-list.module#StaffListPageModule'},
   {
     path: 'report-staff',
     loadChildren:
@@ -153,6 +154,8 @@ const routes: Routes = [
   { path: 'supplier-list', loadChildren: './pages/supplier-list/supplier-list.module#SupplierListPageModule' },
   { path: 'supplier-add', loadChildren: './pages/supplier-add/supplier-add.module#SupplierAddPageModule' },
   { path: 'supplier-detail', loadChildren: './pages/supplier-detail/supplier-detail.module#SupplierDetailPageModule' },
+  { path: 'staff-detail', loadChildren: './pages/staff-detail/staff-detail.module#StaffDetailPageModule' },
+
 ];
 
 @NgModule({
