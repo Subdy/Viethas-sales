@@ -92,8 +92,6 @@ export class StaffDetailPage implements OnInit {
 
 
   ngOnInit() {
-
-
     this.item = this.router.getCurrentNavigation().extras.state.item;
     this.edit_item_form = this.formBuilder.group({
       title: new FormControl(this.item.title, Validators.required),
@@ -101,49 +99,49 @@ export class StaffDetailPage implements OnInit {
     });
     console.log(this.item);
 
-    this.isSeeReport = this.item.data.isSeeReport;
-    this.isChangeReport = this.item.data.isChangeReport;
-    this.isIncome = this.item.data.isIncome;
-    this.isChangeIcome = this.item.data.isChangeIcome;
-    this.isEnter = this.item.data.isEnter;
+    this.isSeeReport = this.item.isSeeReport;
+    this.isChangeReport = this.item.isChangeReport;
+    this.isIncome = this.item.isIncome;
+    this.isChangeIcome = this.item.isChangeIcome;
+    this.isEnter = this.item.isEnter;
 
     this.validations_form = this.formBuilder.group({
     
       name: new FormControl(
-        this.item.data.name,
+        this.item.name,
         Validators.compose([
           Validators.required,
           Validators.pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$")
         ])
       ),
       id_staff: new FormControl(
-        this.item.data.code_staff,
+        this.item.code_staff,
         Validators.compose([
           Validators.compose([Validators.minLength(5), Validators.required])
         ])
       ),
       email: new FormControl(
-        this.item.data.email,
+        this.item.email,
         Validators.compose([Validators.minLength(5), Validators.required])
       ),
       password: new FormControl(
-        this.item.data.password,
+        this.item.password,
         Validators.compose([Validators.minLength(5), Validators.required])
       ),
       address: new FormControl(
-        this.item.data.address,
+        this.item.address,
         
       ),
       revenue: new FormControl(
-        this.item.data.revenue,
+        this.item.revenue,
        
       ),
       phone: new FormControl(
-        this.item.data.phone,
+        this.item.phone,
         Validators.compose([Validators.minLength(9), Validators.required])
       ),
       date: new FormControl(
-        this.item.data.date,
+        this.item.date,
         Validators.compose([Validators.minLength(9), Validators.required])
       ),
     });

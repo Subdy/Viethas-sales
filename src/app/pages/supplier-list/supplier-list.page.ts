@@ -1,30 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, NavigationExtras } from '@angular/router';
-import { FirebaseQuery } from './../../database/firebase.database';
+import { Component, OnInit } from "@angular/core";
+import { Router, NavigationExtras } from "@angular/router";
+import { FirebaseQuery } from "./../../database/firebase.database";
 @Component({
-  selector: 'app-supplier-list',
-  templateUrl: './supplier-list.page.html',
-  styleUrls: ['./supplier-list.page.scss'],
+  selector: "app-supplier-list",
+  templateUrl: "./supplier-list.page.html",
+  styleUrls: ["./supplier-list.page.scss"]
 })
 export class SupplierListPage implements OnInit {
   number: any;
   items: Array<any>;
   dataShow: Array<any>;
   search: any;
-  change:any;
-  constructor(
-    private router: Router,
-    private firebaseQuery: FirebaseQuery,
-    ) { }
+  change: any;
+  constructor(private router: Router, private firebaseQuery: FirebaseQuery) {}
 
-  ngOnInit() {
-    
-  }
+  ngOnInit() {}
   ionViewWillEnter() {
-   this.getData();
+    this.getData();
   }
   gotoSupplierAdd() {
-    this.router.navigateByUrl('supplier-add');
+    this.router.navigateByUrl("supplier-add");
   }
   
   searchStaff(event) {
@@ -71,14 +66,14 @@ export class SupplierListPage implements OnInit {
     }
   }
   //sort by name from A to Z
-  sortAZ(){
+  sortAZ() {
     this.dataShow = this.dataShow.sort((n1, n2) => {
       if (n1.name > n2.name) return 1;
       return -1;
     });
   }
   //sort by name from Z to A
-  sortZA(){
+  sortZA() {
     this.dataShow = this.dataShow.sort((n1, n2) => {
       if (n1.name < n2.name) return 1;
       return -1;
@@ -88,7 +83,7 @@ export class SupplierListPage implements OnInit {
   getData() {
     this.items = new Array();
     this.firebaseQuery
-      .getTasks('suppliers')
+      .getTasks("suppliers")
       .then(
         res => {
           for (let i in res.docs) {
@@ -98,10 +93,9 @@ export class SupplierListPage implements OnInit {
           this.items = this.items.sort((n1, n2) => {
             if (n1.name > n2.name) return 1;
             return -1;
-
           });
-          this.number=res.docs.length;
-          this.dataShow=this.items;
+          this.number = res.docs.length;
+          this.dataShow = this.items;
         },
         err => {
           console.log(err);
@@ -110,7 +104,6 @@ export class SupplierListPage implements OnInit {
       .catch(err => {
         console.log(err);
       });
-    
   }
   //chuyen trang Supplier Detail
   gotoSupplierDetail(item) {

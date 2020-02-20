@@ -12,26 +12,26 @@
 <ion-content>
 <div class="list-staff1">
   <div class="search">
-    <ion-searchbar placeholder="Tìm tên,mã,sđt nhân viên"></ion-searchbar>
+    <ion-searchbar placeholder="Tìm tên,mã,sđt nhân viên" (ionChange)="searchStaff($event)"></ion-searchbar>
     <div class="select-option">
-        <ion-select interface="popover">
-          <ion-select-option value="nes">A-Z</ion-select-option>
-          <ion-select-option value="n64">Z-A</ion-select-option>
-        </ion-select>
-    </div>
+      <ion-select interface="popover" value="AZ" (ionChange)="changeOption($event)">
+          <ion-select-option value="AZ">A-Z</ion-select-option>
+          <ion-select-option value="ZA">Z-A</ion-select-option>
+      </ion-select>
   </div>
-  <div class="txt_tt">Tổng <span>{{staff_sum}}</span> nhân viên </div>
-  <div class="name-list-staff" *ngFor="let item of list_staff" (click)="gotoDetails(item)">
+  </div>
+  <div class="txt_tt">Tổng <span>{{number}}</span> nhân viên </div>
+  <div class="name-list-staff" *ngFor="let item of dataShow" (click)="gotoDetails(item)">
     <ion-item>
       <div class="txt-imgs">
-        <img src="../../../assets/imgs/images (1).png">
+        <img src="https://ggstorage.oxii.vn/images/oxii-2019-2-26/728/hot-girl-waralee-ngot-hon-duong-trong-bo-anh-sun-set-anh-7_1.jpg">
       </div>
       <ion-label>
         <div class="txt-name-staff1">
-          <h3>{{item.data.name}}</h3>
-          <h2>{{item.data.phone}}</h2>
+          <h3>{{item.name}}</h3>
+          <h2>{{item.phone}}</h2>
         </div>
-        <p>{{item.data.id_staff}}</p>
+        <p>{{item.id_staff}}</p>
       </ion-label>
     </ion-item>
   </div>
