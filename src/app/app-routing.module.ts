@@ -68,8 +68,8 @@ const routes: Routes = [
       './pages/update-catalog/update-catalog.module#UpdateCatalogPageModule'
   },
   {
-    path: 'categori',
-    loadChildren: './pages/categori/categori.module#CategoriPageModule'
+    path: 'category',
+    loadChildren: './pages/category/category.module#CategoryPageModule'
   },
   {
     path: 'product-list',

@@ -12,7 +12,8 @@ export class StaffListPage implements OnInit {
   trigger_popup: boolean;
   mang_a: any;
   id:any;
-  list_staff:Array<any>=[]
+  list_staff:Array<any>=[];
+  staff_sum: number
   constructor(
     public alertCtrl: AlertController,
     private firebaseAuth:FirebaseAuth,
@@ -34,8 +35,9 @@ export class StaffListPage implements OnInit {
 
   getrecord(){  
     this.list_staff = new Array();
+    
     this.firebaseQuery.getTasks('employees').then(res=>{
-      
+      this.staff_sum = res.docs.length;  
       for(let i =0; i< res.docs.length; i++){
         let user = {data: res.docs[i].data(), id: res.docs[i].id }
         console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@', user);

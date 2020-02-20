@@ -27,41 +27,46 @@ export class SupplierListPage implements OnInit {
     this.router.navigateByUrl('supplier-add');
   }
   
-  //search item by name
-  searchStaff(event){
-    this.dataShow=new Array();
+  searchStaff(event) {
+    this.dataShow = new Array();
     let value = this.change_alias(event.target.value.toLowerCase());
     this.dataShow = this.items.filter(arr => {
-      if(this.change_alias(arr.name.toLowerCase()).indexOf(value) !== -1) {
+      if (
+        this.change_alias(arr.name.toLowerCase()).indexOf(value) !== -1 ||
+        this.change_alias(arr.email.toLowerCase()).indexOf(value) !== -1 ||
+        arr.phone.toString().indexOf(value) !== -1
+      ) {
         return true;
       }
       return false;
     });
-    
+    this.number = this.dataShow.length;
   }
 
   change_alias(alias) {
     let str = alias;
     str = str.toLowerCase();
-    str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g,"a");
-    str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g,"e");
-    str = str.replace(/ì|í|ị|ỉ|ĩ/g,"i");
-    str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g,"o");
-    str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g,"u");
-    str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g,"y");
-    str = str.replace(/đ/g,"d");
-    str = str.replace(/!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'|\"|\&|\#|\[|\]|~|\$|_|`|-|{|}|\||\\/g," ");
-    str = str.replace(/ + /g," ");
+    str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+    str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+    str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+    str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+    str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+    str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+    str = str.replace(/đ/g, "d");
+    str = str.replace(
+      /!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'|\"|\&|\#|\[|\]|~|\$|_|`|-|{|}|\||\\/g,
+      " "
+    );
+    str = str.replace(/ + /g, " ");
     str = str.trim();
     return str;
   }
 
-  //option changed will sort by name 
-  changeOption(event){ 
-    if(event.target.value=="AZ"){
+  //option changed will sort by name
+  changeOption(event) {
+    if (event.target.value == "AZ") {
       this.sortAZ();
-    }
-    else{
+    } else {
       this.sortZA();
     }
   }
