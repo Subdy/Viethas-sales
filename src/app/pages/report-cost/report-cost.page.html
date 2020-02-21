@@ -13,7 +13,7 @@
         <div class="div-cal1">
           <span>Từ</span>
           <ion-item class="cal1">
-            <ion-datetime displayFormat="DD-MM-YYYY" min="2005" max="2016" value="2008-09-02"></ion-datetime>
+            <ion-datetime displayFormat="DD-MM-YYYY" min="2005" max="2016" value="{{ time_start.getDate() | date: 'dd/MM/yyyy' }}"></ion-datetime>
             <ion-icon name="calendar"></ion-icon>
           </ion-item>
         </div>
@@ -22,7 +22,7 @@
         <div class="div-cal2">
           <span>Đến</span>
           <ion-item class="cal2">
-            <ion-datetime displayFormat="DD-MM-YYYY" min="2005" max="2016" value="2008-09-02"></ion-datetime>
+            <ion-datetime displayFormat="DD-MM-YYYY" min="2005" max="2016" value="{{ time_end.getDate() | date: 'dd/MM/yyyy' }}"></ion-datetime>
             <ion-icon name="calendar"></ion-icon>
           </ion-item>
         </div>
@@ -33,7 +33,7 @@
           <option class="option-bt" value="m">Tất cả thu</option>
           <option class="option-bt" value="year">Tất cả chi</option>
           <option class="option-bt" value="1000year">Thu bán hàng</option>
-          <option class="option-bt" value="1000year">Thu bán hàng</option>
+          <option class="option-bt" value="1000year">Chi bán hàng</option>
           <option class="option-bt" value="1000year">Chi nhập hàng</option>
           <option class="option-bt" value="1000year">Thu chi khác</option>
         </select>
@@ -88,13 +88,13 @@
           <tbody>
               <tr class="row-item" *ngFor="let item of data" >
                   <td width="20%" >
-                      {{item.day}}
+                      {{item.bill_code}}
                   </td>
                   <td width="30%">
-                      {{ item.money }}
+                      {{ item.date | date: 'dd/MM/yyyy hh:mm' }}
                   </td>
                   <td width="30%">
-                      {{ item.revenue }}
+                      {{ item.name_staff }}
                   </td>
                   <td width="20%">
                       {{ item.total }}

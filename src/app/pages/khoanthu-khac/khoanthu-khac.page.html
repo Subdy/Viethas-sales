@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Thêm Khoản Thu</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div
+      *ngIf="triggerPopupValidation"
+      style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: gray; opacity: .5; z-index: 999"
+      (click)="triggerPopupValidation=false"
+    >
+    </div>
+    <ion-grid *ngIf="triggerPopupValidation" style="position: absolute; width: 100%;">
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col size="10">
+          <ion-card
+            class="ion-padding"
+            style="z-index: 9999; background: white"
+          >
+          <div class="txt-card-tt1">
+            <h5 class="ion-text-center">{{ triggerPopupValidation_message }}</h5>
+            <ion-button style="width: 100%" (click)="triggerPopupValidation=false">OK</ion-button>
+          </div>
+          </ion-card>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+	<ion-card>
+		<ion-card-content>
+			<div class="ion-padding">
+				<form class="form" #form="ngForm" ngForm [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form)">
+					<div>
+						<!-- Ngày thu -->
+						<ion-item class="ion-no-padding">
+							<ion-label>Ngày thu</ion-label>
+							<ion-datetime formControlName="date" displayFormat="DD/MM/YYYY" required></ion-datetime>
+							<ion-icon name="calendar"></ion-icon>
+						</ion-item>
+						<div class="validation-errors">
+							<ng-container *ngFor="let validation of validation_messages.date">
+								<div class="error-message" *ngIf="validations_form.get('date').hasError(validation.type) && (validations_form.get('date').dirty || validations_form.get('date').touched)">
+									<ion-text color="danger">{{ validation.message }}</ion-text>
+								</div>
+							</ng-container>
+						</div>
+						<!-- Tên người nhập -->
+						<ion-item class="ion-no-padding">
+							<ion-label>Người nhập</ion-label>
+							<ion-input required formControlName="staffName" type="text" class="ion-text-right" placeholder="Ngô Quang Sang"></ion-input>
+							<ion-icon></ion-icon>
+						</ion-item>
+						<div class="validation-errors">
+							<ng-container *ngFor="let validation of validation_messages.staffName">
+								<div class="error-message" *ngIf="validations_form.get('staffName').hasError(validation.type) && (validations_form.get('staffName').dirty || validations_form.get('staffName').touched)">
+									<ion-text color="danger">{{ validation.message }}</ion-text>
+								</div>
+							</ng-container>
+						</div>
+						<!-- Số tiền -->
+						<ion-item class="ion-no-padding">
+							<ion-label>Số tiền</ion-label>
+							<ion-input required type="number" placeholder=50000 formControlName="total" class="ion-text-right"></ion-input>
+							<ion-icon></ion-icon>
+						</ion-item>
+						<div class="validation-errors">
+							<ng-container *ngFor="let validation of validation_messages.total">
+								<div class="error-message" *ngIf="validations_form.get('total').hasError(validation.type) && (validations_form.get('total').dirty || validations_form.get('total').touched)">
+									<ion-text color="danger">{{ validation.message }}</ion-text>
+								</div>
+							</ng-container>
+						</div>
+						<!-- Nội dung -->
+						<ion-item class="ion-no-padding">
+							<ion-label>Nội dung</ion-label>
+							<ion-input required type="text" formControlName="content" class="ion-text-right"></ion-input>
+							<ion-icon></ion-icon>
+						</ion-item>
+						<div class="validation-errors">
+							<ng-container *ngFor="let validation of validation_messages.content">
+								<div class="error-message" *ngIf="validations_form.get('content').hasError(validation.type) && (validations_form.get('content').dirty || validations_form.get('content').touched)">
+									<ion-text color="danger">{{ validation.message }}</ion-text>
+								</div>
+							</ng-container>
+						</div>
+					</div>
+				</form>
+			</div>
+		</ion-card-content>
+	</ion-card>
+
+</ion-content>
+
+<ion-footer>
+	<div class="ion-text-center ion-padding-bottom">
+		<ion-button (click)="form.ngSubmit.emit(form)">Lưu</ion-button>
+	</div>
+</ion-footer>

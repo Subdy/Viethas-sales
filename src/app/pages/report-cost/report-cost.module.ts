@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { ReportCostPage } from './report-cost.page';
-
+import { BillTools } from './../billtools.class';
 const routes: Routes = [
   {
     path: '',
@@ -21,6 +21,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ReportCostPage]
+  declarations: [ReportCostPage],
+  providers: [BillTools]
 })
 export class ReportCostPageModule {}

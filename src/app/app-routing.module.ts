@@ -153,6 +153,8 @@ const routes: Routes = [
   { path: 'supplier-list', loadChildren: './pages/supplier-list/supplier-list.module#SupplierListPageModule' },
   { path: 'supplier-add', loadChildren: './pages/supplier-add/supplier-add.module#SupplierAddPageModule' },
   { path: 'supplier-detail', loadChildren: './pages/supplier-detail/supplier-detail.module#SupplierDetailPageModule' },
+  { path: 'khoanthu-khac', loadChildren: './pages/khoanthu-khac/khoanthu-khac.module#KhoanthuKhacPageModule' },
+  { path: 'khoanchi-khac', loadChildren: './pages/khoanchi-khac/khoanchi-khac.module#KhoanchiKhacPageModule' }
 ];
 
 @NgModule({
