@@ -1,39 +1,31 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Quản Lý</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button text=""></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
 <ion-content class="content-report">
     <div class="container">
-        <div *ngIf="trigger_popupThuChiKhac" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: gray; opacity: .5; z-index: 999" (click)="triggerPopup()"></div>
-        <ion-grid *ngIf="trigger_popupThuChiKhac" style="position: absolute; width: 100%;">
-            <ion-row>
-                <ion-col></ion-col>
-                <ion-col size="10">
-                    <ion-card class="ion-padding" style="z-index: 9999; background: white">
-                        <div class="txt-card-tt1">
-                            <h5 class="ion-text-center">Bạn muốn thêm?</h5>
-                            <ion-button style="width: 100%" (click)="goToKhoanThuKhac()">Khoản thu</ion-button>
-                            <ion-button style="width: 100%" (click)="goToKhoanChiKhac()">Khoản chi</ion-button>
-                        </div>
-                    </ion-card>
-                </ion-col>
-                <ion-col></ion-col>
-            </ion-row>
-        </ion-grid>
         <ion-grid>
             <ion-row class="row-report">
                 <ion-col size="6" class="content-row">
                     <div class="txt-title1">
-                        <ion-card (click)="goToSystem()">
+                        <ion-card (click)="gotoinventory()">
                             <ion-icon name="logo-usd"></ion-icon>
                             <div class="txt-card-tt1">
-                                Cấu Hình
+                                Kho
                             </div>
                         </ion-card>
                     </div>
                 </ion-col>
                 <ion-col size="6" class="content-row">
-                    <div class="txt-title1" (click)="goToManagement()">
-                        <ion-card>
+                    <div class="txt-title1">
+                        <ion-card (click)="gotosupplier()">
                             <ion-icon name="cash"></ion-icon>
                             <div class="txt-card-tt1">
-                                Quản Lý
+                                Nhà Cung Cấp
                             </div>
                         </ion-card>
                     </div>
@@ -42,10 +34,10 @@
             <ion-row class="row-report">
                 <ion-col size="6" class="content-row">
                     <div class="txt-title1">
-                        <ion-card (click)="triggerPopup()">
+                        <ion-card (click)="translateStaffList()">
                             <ion-icon name="logo-buffer"></ion-icon>
                             <div class="txt-card-tt1">
-                                Nhập Thu Chi Khác
+                                Nhân Viên
                             </div>
                         </ion-card>
                     </div>
@@ -55,7 +47,29 @@
                         <ion-card>
                             <ion-icon name="cube"></ion-icon>
                             <div class="txt-card-tt1">
-                                Chương Trình Giảm Giá
+                                Khách Hàng
+                            </div>
+                        </ion-card>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <ion-row class="row-report">
+                <ion-col size="6" class="content-row">
+                    <div class="txt-title1">
+                        <ion-card (click)="addStaff()">
+                            <ion-icon name="logo-buffer"></ion-icon>
+                            <div class="txt-card-tt1">
+                                Đơn hàng
+                            </div>
+                        </ion-card>
+                    </div>
+                </ion-col>
+                <ion-col size="6" class="content-row">
+                    <div class="txt-title1">
+                        <ion-card>
+                            <ion-icon name="cube"></ion-icon>
+                            <div class="txt-card-tt1">
+                                Danh mục
                             </div>
                         </ion-card>
                     </div>

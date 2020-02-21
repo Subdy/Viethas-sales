@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Danh Sách Nhân Viên</ion-title>
+    <ion-button slot="end" (click)="goToAddStaff()">
+      <ion-icon name="add"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<div class="list-staff1">
+  <div class="search">
+    <ion-searchbar placeholder="Tìm tên,mã,sđt nhân viên" (ionChange)="searchStaff($event)"></ion-searchbar>
+    <div class="select-option">
+      <ion-select interface="popover" value="AZ" (ionChange)="changeOption($event)">
+          <ion-select-option value="AZ">A-Z</ion-select-option>
+          <ion-select-option value="ZA">Z-A</ion-select-option>
+      </ion-select>
+  </div>
+  </div>
+  <div class="txt_tt">Tổng <span>{{number}}</span> nhân viên </div>
+  <div class="name-list-staff" *ngFor="let item of dataShow" (click)="gotoDetails(item)">
+    <ion-item>
+      <div class="txt-imgs">
+        <img src="https://ggstorage.oxii.vn/images/oxii-2019-2-26/728/hot-girl-waralee-ngot-hon-duong-trong-bo-anh-sun-set-anh-7_1.jpg">
+      </div>
+      <ion-label>
+        <div class="txt-name-staff1">
+          <h3>{{item.name}}</h3>
+          <h2>{{item.phone}}</h2>
+        </div>
+        <p>{{item.id_staff}}</p>
+      </ion-label>
+    </ion-item>
+  </div>
+</div>
+</ion-content>
+
+
