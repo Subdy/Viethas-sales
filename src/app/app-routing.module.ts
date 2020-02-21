@@ -274,7 +274,9 @@ const routes: Routes = [
     loadChildren:
       "./pages/others/staff-list/staff-list.module#StaffListPageModule"
   },  { path: 'revenue-add', loadChildren: './pages/others/revenue-add/revenue-add.module#RevenueAddPageModule' },
-  { path: 'expenditure-add', loadChildren: './pages/others/expenditure-add/expenditure-add.module#ExpenditureAddPageModule' }
+  { path: 'expenditure-add', loadChildren: './pages/others/expenditure-add/expenditure-add.module#ExpenditureAddPageModule' },
+  { path: 'customer-list', loadChildren: './pages/others/customer-list/customer-list.module#CustomerListPageModule' },
+  { path: 'customer-detail', loadChildren: './pages/others/customer-detail/customer-detail.module#CustomerDetailPageModule' }
 
 ];
 

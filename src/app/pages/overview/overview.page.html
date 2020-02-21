@@ -10,21 +10,23 @@
     <ion-grid>
         <ion-row class="row1">
             <div class="col1-r1">
-                <h2><span style="color: #009933; font-size: 1.2rem;">86.76</span> triệu</h2>
+                <h2>
+                    <span style="color: #009933; font-size: 1.2rem;">86.76</span> triệu
+                </h2>
                 <h4>6 Hóa đơn</h4>
-            </div> 
-            <div class="col2-r1"> 
+            </div>
+            <div class="col2-r1">
                 <h2><span style="color: #009933; font-size: 1.2rem;">0</span> triệu</h2>
                 <h4>0 phiếu trả</h4>
-            </div> 
+            </div>
             <div class="col3-r1">
                 <ion-select value="01" interface="popover">
-                    <ion-select-option  value="01">Hôm nay</ion-select-option>
+                    <ion-select-option value="01">Hôm nay</ion-select-option>
                     <ion-select-option value="02">Tuần này</ion-select-option>
                     <ion-select-option value="03">Tháng này</ion-select-option>
                     <ion-select-option value="04">Năm này</ion-select-option>
                 </ion-select>
-            </div>          
+            </div>
         </ion-row>
 
         <ion-row class="row7">
@@ -37,7 +39,7 @@
 
         <ion-row class="row2">
             <ion-col size="6" class="row2-col1">
-                <div>
+                <div [routerLink]="['/new-item']">
                     Tồn kho:
                     <span style="color: #009933; font-size: 1.2rem;">1.133.333đ</span>
                 </div>
@@ -98,7 +100,7 @@
             <ion-col size="12" class="title">THÔNG TIN KHO</ion-col>
         </ion-row>
 
-        <ion-row class="row6">          
+        <ion-row class="row6">
             <ion-col size="12" class="r6-col">
                 <div class="title-col">Sản phẩm định mức tồn dưới 10</div>
                 <ion-item-group class="r6-gr">

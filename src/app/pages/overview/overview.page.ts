@@ -1,6 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
 import { Chart } from "chart.js";
-import { FirebaseQuery } from './../../database/firebase.database';
+import { FirebaseQuery } from "./../../database/firebase.database";
 
 @Component({
   selector: "page-overview",
@@ -11,10 +11,40 @@ export class OverViewPage {
   @ViewChild("barChart", { static: false }) barChart;
   bars: any;
   colorArray: any;
-
-  constructor(
-    private FirebaseQuery: FirebaseQuery
-  ) {
+  startDateTime: Date = new Date();
+  endDateTime: Date = new Date();
+  constructor(private FirebaseQuery: FirebaseQuery) {
+    this.startDateTime.setHours(0, 0, 0);
+    this.endDateTime.setHours(23, 59, 59);
+    // this.FirebaseQuery.getTasks_3Field(
+    //   "bills",
+    //   "date",
+    //   this.startDateTime,
+    //   ">=",
+    //   "date",
+    //   this.endDateTime,
+    //   "<=",
+    //   "bill_type",
+    //   2,
+    //   "=="
+    // ).then(res => {
+    //   for (let i in res.docs) {
+    //     console.log(res.docs[i].data());
+    //   }
+    // });
+    // this.FirebaseQuery.getTasks("bills").then(res => {
+    //   for (let i in res.docs) {
+    //     console.log(res.docs[i].data());
+    //   }
+    //   this.FirebaseQuery.getTasks_Field(
+    //     "bill_details",
+    //     "id_bill",
+    //     res.docs[0].id,
+    //     "=="
+    //   ).then(res => {
+    //     console.log(res.docs[0].data());
+    //   });
+    // });
     console.log("overview");
   }
   ionViewDidEnter() {
@@ -43,7 +73,7 @@ export class OverViewPage {
       },
       options: {
         legend: {
-          display:false,
+          display: false
         },
         scales: {
           yAxes: [
@@ -53,7 +83,7 @@ export class OverViewPage {
                 fontSize: fontSize
               },
               gridLines: {
-                display: true,
+                display: true
               }
             }
           ],
@@ -79,4 +109,5 @@ export class OverViewPage {
       }
     });
   }
+  
 }

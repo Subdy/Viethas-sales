@@ -1,28 +1,33 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { Router, RouterModule } from "@angular/router";
 @Component({
-  selector: 'app-management',
-  templateUrl: './management.page.html',
-  styleUrls: ['./management.page.scss'],
+  selector: "app-management",
+  templateUrl: "./management.page.html",
+  styleUrls: ["./management.page.scss"]
 })
 export class ManagementPage implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor(
-    private router: Router
-  ) { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
   gotosupplier() {
-    this.router.navigateByUrl('supplier-list');
+    this.router.navigateByUrl("supplier-list");
   }
   gotoinventory() {
-    this.router.navigateByUrl('inventory');
+    this.router.navigateByUrl("inventory");
   }
-  translateStaffList(){
-    this.router.navigateByUrl('staff-list');
+  translateStaffList() {
+    this.router.navigateByUrl("staff-list");
   }
-  addStaff(){
-    this.router.navigateByUrl('staff-add');
+  addStaff() {
+    this.router.navigateByUrl("staff-add");
+  }
+  gotoSell_history() {
+    this.router.navigateByUrl("sell-history");
+  }
+  goto_customer() {
+    this.router.navigateByUrl("customer-list");
+  }
+  goto_category() {
+    this.router.navigateByUrl(`category`);
   }
 }

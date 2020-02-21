@@ -1,5 +1,5 @@
 import { WebView } from '@ionic-native/ionic-webview/ngx';
-import { FirebaseQuery, FirebaseImage } from './../../../database/firebase.database';
+import { FirebaseQuery, FirebaseImage } from 'src/app/database/firebase.database';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { Router, RouterModule, NavigationExtras} from '@angular/router';
@@ -19,6 +19,7 @@ export class ProductImportAddProductPage implements OnInit {
   bill_detail;
   id_bill;
   thumbnail = "/assets/imgs/add.png";
+  save_btn = false;
   constructor(
     public formBuilder: FormBuilder,
     private router: Router,
@@ -63,7 +64,7 @@ export class ProductImportAddProductPage implements OnInit {
   }
   scan () {
     this.barcode.scan().then(data => {
-      this.product.setValue({barcode: data.text});
+      this.product.controls['barcode'].setValue(data.text);
     }).catch(err => {
       alert(err);
     })
@@ -72,6 +73,7 @@ export class ProductImportAddProductPage implements OnInit {
     if (this.product.value.barcode == '') {
       alert('Vui lòng nhập barcode sản phẩm');
     } else {
+      this.save_btn = true;
       console.log(this.product.value);
       //luu san pham chuyen di
       this.firebaseQuery.createTask('products', {

@@ -1,66 +1,191 @@
-.container-categori{
-    .content-full{
-        .searchbar-input {
-            border-radius: 10px;
-            font-size: 2vh;
-            font-weight: 600;
-            width: 100%;
-            color: #000;
-            background-color: #fff;
-            height: 6vh;
-            padding-left: 10%;
-          }
-          .searchbar-search-icon {
-            left: 2%;
-            width: 6vh;
-            height: 6vh;
-            top: 25%;
-            background-size: 3vh;
-          }
-        .content-tt{
-            // display: flex;
-        .content-card1{
-            ion-card{
-                height: 25vw;
-                width: 25vw;
-                border-radius: 10px;
-                border: 1px solid grey;
-                margin: auto;
-            }
-            ion-icon {
-                font-size: 25vw;
+ion-content {
+    .txtname_pro {
+        font-size: 1rem;
+        margin: 2vw;
+        margin-left: 4vw;
+    }
+    .list_item {
+        ion-label {
+            display: flex;
+            justify-content: space-between;
+            .txt_icon {
                 display: flex;
-                justify-content: center;
-                color: darkgray;
-               
+                ion-icon {
+                    font-size: 1rem;
+                }
+                p {
+                    font-size: 1rem;
+                    height: 2rem;
+                }
             }
-            .card-title{
-                text-align: center;
-                font-size: 1.8vh;
-             
+            .test-dropdown {
+                position: relative;
+                .dropdown {
+                    position: relative;
+                    top: 20px;
+                    margin-bottom: 20px;
+                    width: 100%;
+                    text-align: left;
+                    margin-left: -36vw;
+                    ion-item {
+                        width: 90vw;
+                        .txt_icon {
+                            display: flex !important;
+                            flex-direction: row !important;
+                            justify-content: space-between !important;
+                            width: 90vw;
+                        }
+                    }
+                }
             }
         }
-        .content-card2{
-            ion-card{
-                height: 25vw;
-                width: 25vw;
-                border-radius: 10px;
-                border: 1px solid grey;
-                margin: auto;
-            }
-            // ion-icon {
-            //     font-size: 25vw;
-            //     display: flex;
-            //     justify-content: center;
-            //     color: darkgray;
-               
-            // }
-            .card-title{
-                text-align: center;
-                font-size: 1.8vh;
-             
+        .icon1 {
+            .test1 {
+                position: absolute;
+                left: 82vw;
             }
         }
     }
-}
+    //   @media screen and(min-width:600px) {
+    //     .txtname_pro {
+    //       font-size: 1rem;
+    //       margin: 2vw;
+    //       margin-left: 2vw !important;
+    //     }
+    //     .list_item {
+    //       ion-label {
+    //         display: flex;
+    //         justify-content: space-between;
+    //         .txt_icon {
+    //           display: flex;
+    //           ion-icon {
+    //             font-size: 1rem;
+    //           }
+    //           p {
+    //             font-size: 1rem;
+    //             height: 2rem;
+    //           }
+    //         }
+    //         .test-dropdown {
+    //           position: relative;
+    //           .dropdown {
+    //             position: relative;
+    //             top: 20px;
+    //             margin-bottom: 20px;
+    //             width: 100%;
+    //             text-align: left;
+    //             margin-left: -18vh !important;
+    //             ion-item {
+    //               width: 95vw !important;
+    //               margin-left: 7vw !important;
+    //             }
+    //           }
+    //         }
+    //       }
+    //       .icon1 {
+    //         .test1 {
+    //           position: absolute;
+    //           left: 90vw !important;
+    //         }
+    //       }
+    //     }
+    //   }
+    @media screen and(min-width:375px) {
+        .txtname_pro {
+            font-size: 1rem;
+            margin: 2vw;
+            margin-left: 4vw;
+        }
+        .list_item {
+            ion-label {
+                display: flex;
+                justify-content: space-between;
+                .txt_icon {
+                    display: flex;
+                    ion-icon {
+                        font-size: 1rem;
+                    }
+                    p {
+                        font-size: 1rem;
+                        height: 2rem;
+                    }
+                }
+                .test-dropdown {
+                    position: relative;
+                    .dropdown {
+                        position: relative;
+                        top: 20px;
+                        margin-bottom: 20px;
+                        width: 100%;
+                        text-align: left;
+                        margin-left: -35vw;
+                        ion-item {
+                            width: 90vw;
+                            .txt_icon {
+                                display: flex !important;
+                                flex-direction: row !important;
+                                justify-content: space-between !important;
+                                width: 90vw;
+                            }
+                        }
+                    }
+                }
+            }
+            .icon1 {
+                .test1 {
+                    position: absolute;
+                    left: 81vw;
+                }
+            }
+        }
+    }
+    @media screen and(min-width:411px) {
+        .txtname_pro {
+            font-size: 1rem;
+            margin: 2vw;
+            margin-left: 4vw;
+        }
+        .list_item {
+            ion-label {
+                display: flex;
+                justify-content: space-between;
+                .txt_icon {
+                    display: flex;
+                    ion-icon {
+                        font-size: 1rem;
+                    }
+                    p {
+                        font-size: 1rem;
+                        height: 2rem;
+                    }
+                }
+                .test-dropdown {
+                    position: relative;
+                    .dropdown {
+                        position: relative;
+                        top: 20px;
+                        margin-bottom: 20px;
+                        width: 100%;
+                        text-align: left;
+                        margin-left: -32vw !important;
+                        ion-item {
+                            width: 92vw;
+                            .txt_icon {
+                                display: flex !important;
+                                flex-direction: row !important;
+                                justify-content: space-between !important;
+                                width: 92vw;
+                            }
+                        }
+                    }
+                }
+            }
+            .icon1 {
+                .test1 {
+                    position: absolute;
+                    left: 84vw !important;
+                }
+            }
+        }
+    }
 }

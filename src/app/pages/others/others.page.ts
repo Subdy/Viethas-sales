@@ -34,4 +34,7 @@ export class OthersPage implements OnInit {
   ionViewWillEnter() {
     this.trigger_popupThuChiKhac = false;
   }
+  goToSales(){
+    this.router.navigateByUrl("sales");
+  }
 }
