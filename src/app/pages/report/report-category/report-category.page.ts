@@ -7,6 +7,10 @@ import { Chart } from "chart.js";
 })
 export class ReportCategoryPage{
   @ViewChild("pieCanvas",{static: false}) pieCanvas;
+  condition1 : boolean = true;
+  condition2 : boolean = false;
+  condition3 :boolean = false;
+  condition4 : boolean = false;
   cao: number = 200;
   doughnutChart: any;
   data_total: Array<any>= [45,23,44,65,54,33];
@@ -44,14 +48,34 @@ export class ReportCategoryPage{
     }
     ]
   constructor() { }
-  segmentChanged($event){
-    
+
+  setActive1(){
+    this.condition1 = true;
+    this.condition2 = false;
+    this.condition3 = false;
+    this.condition4 = false;
   }
+  setActive2(){
+    this.condition2 = true;
+    this.condition1 = false;
+    this.condition3 = false;
+    this.condition4 = false;
+  }
+  setActive3(){
+    this.condition3 = true;
+    this.condition1 = false;
+    this.condition2 = false;
+    this.condition4 = false;
+  }
+  setActive4(){
+    this.condition4 = true;
+    this.condition1 = false;
+    this.condition2 = false;
+    this.condition3 = false;
+  }
+  
   ionViewDidEnter() {
     this.createBarChart();
-    
-
-
   }
   createBarChart() {
       var data = {
@@ -128,4 +152,5 @@ export class ReportCategoryPage{
         options: pieOptions,
       });
     }
+
 }

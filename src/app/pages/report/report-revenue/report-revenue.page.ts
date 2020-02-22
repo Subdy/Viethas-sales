@@ -8,11 +8,41 @@ import { Chart } from "chart.js";
 })
 export class ReportRevenuePage {
   @ViewChild("barChart", { static: false }) barChart;
+  condition1 : boolean = true;
+  condition2 : boolean = false;
+  condition3 :boolean = false;
+  condition4 : boolean = false;
   bars: any;
 
   constructor() {
     console.log("overview");
   }
+  
+  setActive1(){
+    this.condition1 = true;
+    this.condition2 = false;
+    this.condition3 = false;
+    this.condition4 = false;
+  }
+  setActive2(){
+    this.condition2 = true;
+    this.condition1 = false;
+    this.condition3 = false;
+    this.condition4 = false;
+  }
+  setActive3(){
+    this.condition3 = true;
+    this.condition1 = false;
+    this.condition2 = false;
+    this.condition4 = false;
+  }
+  setActive4(){
+    this.condition4 = true;
+    this.condition1 = false;
+    this.condition2 = false;
+    this.condition3 = false;
+  }
+  
   ionViewDidEnter() {
     this.createBarChart();
   }

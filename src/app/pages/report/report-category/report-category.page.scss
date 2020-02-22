@@ -4,44 +4,41 @@
     .general-content1 {
         position: relative;
         height: 4vh;
-        margin-top: 2.5vh;
-        margin-bottom: 1.5vh;
+        margin-top: 1.5rem;
+        margin-bottom: 0.25rem;
         width: 76vw;
         margin-left: 13vw;
-        .chart-revenue{
-            background-color: #999;
-            border: 0px solid #eee;
-            border-radius: 10vh;
-            height: 100%;
+        .ct-button{
             width: 100%;
-            font-size: 1rem;
-            .revenue-button{
-                color: white;
-                text-align: center !important;
-                align-items: center;
-                justify-content: center;
-                min-height: 4vh;
-                border: none;
-                line-height: 5vh;
-
-                text-transform: none;
-                white-space: normal;
+            background-color: #999;
+            height: 4vh;
+            border-radius: 10vh;
+            .segment{
+                width: 25%;
+                float: left;
+                height: 4vh;
+                text-align: center;
+                line-height: 4vh;
+                color: white!important;
+                label{
+                    font-size: 1rem;
+                }
             }
-            ion-segment-button.segment-button-checked{
-                background-color:#00A859;
-                color: white;
+            .active{
+                border: none!important;
+                background-color: #00A859;
                 border-radius: 10vh;
             }
-            ion-segment-button.segment-button-checked:first-child{
-                background-color:#00A859;
-                color: white;
-                border-radius: 10vh;
-            }
-        }      
+        }
     }
     .calendar{
         .col1{
+            padding-right: 0!important;
             display: inline-flex;
+            ion-item{
+                --inner-padding-end: 0px;
+                --padding-start:0.75rem;
+            }
             span{
                 padding: 0 0.5rem;
                 line-height: 2.1rem;
@@ -49,28 +46,35 @@
             }
             .cal1{
                 width: 8rem;
-                border: 1px solid #eee;
+                border: 0.5px solid #eee;
                 box-shadow: 0vh 0.1vh 0vh 0.1vh #ddd;
                 border-radius: 10vh;
                 float: left;
                 height: 2rem;
                 ion-datetime{
-                    font-size: 0.9rem;
                     color: #00A859;
-                    padding: 0!important;
-                    min-height: 2rem;
-                    line-height: 1.4rem!important;
+                    padding: 0 !important;
+                    min-height: 2.3rem;
+                    line-height: 2.1rem !important;
+                    padding-bottom: 0.6rem !important;
+                    font-size: 0.9rem;
                 }
                 ion-icon{
-                    font-size: 1.4rem;
-                    padding-left: 0.2rem;
-                    padding-bottom: 0.6rem;
+                    padding-left: 0.5rem;
+                    padding-bottom: 0.9rem;
                     color: #00A859;
+                    font-size: 1.2rem;
                 }
             }   
         }
         .col2{
+            ion-item{
+                --inner-padding-end: 0px;
+                --padding-start:0.75rem;
+            }
             display: inline-flex;
+            padding-left: 0!important;
+            padding-right: 0!important;
             span{
                 padding: 0 0.5rem;
                 line-height: 2.1rem;
@@ -84,21 +88,23 @@
                 float: right;
                 height: 2rem;
                 ion-datetime{
-                    font-size: 0.9rem;
                     color: #00A859;
-                    padding: 0!important;
-                    min-height: 2rem;
-                    line-height: 1.4rem!important;
+                    padding: 0 !important;
+                    min-height: 2.3rem;
+                    line-height: 2.1rem !important;
+                    padding-bottom: 0.6rem !important;
+                    font-size: 0.9rem;
                 }
                 ion-icon{
-                    font-size: 1.4rem;
-                    padding-left: 0.2rem;
-                    padding-bottom: 0.6rem;
+                    padding-left: 0.5rem;
+                    padding-bottom: 0.9rem;
                     color: #00A859;
+                    font-size: 1.2rem;
                 }
             }   
         }
     }
+    
     @media screen and(min-height:1024px){
         .calendar{
             .col1{
@@ -114,7 +120,6 @@
                 }
             }
         }
-
     }
     .content3 {
         margin: 2vw 2vw 0vw 2vw;

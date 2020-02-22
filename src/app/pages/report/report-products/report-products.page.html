@@ -9,18 +9,18 @@
 
 <ion-content class="content-report-products">
   <div class="general-content1">
-    <ion-segment class="chart-revenue" (ionChange)="segmentChanged($event)">
-      <ion-segment-button checked class="revenue-button" value="revenue">
-        <ion-label>Doanh thu</ion-label>
-      </ion-segment-button>
-      <ion-segment-button class="revenue-button" value="profit">
-        <ion-label>Lợi nhuận</ion-label>
-      </ion-segment-button>
-      <ion-segment-button class="revenue-button" value="number">
-        <ion-label>Số lượng</ion-label>
-      </ion-segment-button>
-    </ion-segment>
-  </div>
+    <div class="ct-button">
+      <div (click)="setActive1()" [className]="condition1 ? 'segment active' : 'segment'" >
+        <label>doanh thu</label>
+      </div>
+      <div (click)="setActive2()" [className]="condition2 ? 'segment active' : 'segment'" >
+        <label>lợi nhuận</label>
+      </div>
+      <div (click)="setActive3()" [className]="condition3 ? 'segment active' : 'segment'">
+        <label>số lượng</label>
+      </div>
+    </div> 
+</div>
   <div class="calendar">
     <ion-grid>
       <ion-row>

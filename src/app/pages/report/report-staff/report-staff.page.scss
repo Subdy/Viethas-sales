@@ -4,40 +4,32 @@
     .general-content1 {
         position: relative;
         height: 4vh;
-        margin-top: 2.5vh;
-        margin-bottom: 1.5vh;
+        margin-top: 1.5rem;
+        margin-bottom: 0.25rem;
         width: 76vw;
-        margin-left: 13vw;
-        .chart-revenue{
-            background-color: #999;
-            border: 0px solid #eee;
-            border-radius: 10vh;
-            height: 100%;
+        margin-left: 12vw;
+        .ct-button{
             width: 100%;
-            font-size: 1rem;
-            .revenue-button{
-                color: white;
-                text-align: center !important;
-                align-items: center;
-                justify-content: center;
-                min-height: 4vh;
-                border: none;
-                line-height: 5vh;
-
-                text-transform: none;
-                white-space: normal;
+            background-color: #999;
+            height: 4vh;
+            border-radius: 10vh;
+            .segment{
+                width: 33.33%;
+                float: left;
+                height: 4vh;
+                text-align: center;
+                line-height: 4vh;
+                color: white!important;
+                label{
+                    font-size: 1rem;
+                }
             }
-            ion-segment-button.segment-button-checked{
-                background-color:#00A859;
-                color: white;
+            .active{
+                border: none!important;
+                background-color: #00A859;
                 border-radius: 10vh;
             }
-            ion-segment-button.segment-button-checked:first-child{
-                background-color:#00A859;
-                color: white;
-                border-radius: 10vh;
-            }
-        }      
+        }
     }
     .calendar{
         .col1{
@@ -47,6 +39,10 @@
                 line-height: 2.1rem;
                 font-size: 1rem;
             }
+            ion-item{
+                --inner-padding-end: 0px;
+                --padding-start:0.75rem;
+            }
             .cal1{
                 width: 8rem;
                 border: 1px solid #eee;
@@ -55,17 +51,18 @@
                 float: left;
                 height: 2rem;
                 ion-datetime{
-                    font-size: 0.9rem;
                     color: #00A859;
-                    padding: 0!important;
-                    min-height: 2rem;
-                    line-height: 1.4rem!important;
+                    padding: 0 !important;
+                    min-height: 2.3rem;
+                    line-height: 2.1rem !important;
+                    padding-bottom: 0.6rem !important;
+                    font-size: 0.9rem;
                 }
                 ion-icon{
-                    font-size: 1.4rem;
-                    padding-left: 0.2rem;
-                    padding-bottom: 0.6rem;
+                    padding-left: 0.5rem;
+                    padding-bottom: 0.9rem;
                     color: #00A859;
+                    font-size: 1.2rem;
                 }
             }   
         }
@@ -76,6 +73,10 @@
                 line-height: 2.1rem;
                 font-size: 1rem;
             }
+            ion-item{
+                --inner-padding-end: 0px;
+                --padding-start:0.75rem;
+            }
             .cal2{
                 width: 8rem;
                 border: 1px solid #eee;
@@ -84,17 +85,18 @@
                 float: right;
                 height: 2rem;
                 ion-datetime{
-                    font-size: 0.9rem;
                     color: #00A859;
-                    padding: 0!important;
-                    min-height: 2rem;
-                    line-height: 1.4rem!important;
+                    padding: 0 !important;
+                    min-height: 2.3rem;
+                    line-height: 2.1rem !important;
+                    padding-bottom: 0.6rem !important;
+                    font-size: 0.9rem;
                 }
                 ion-icon{
-                    font-size: 1.4rem;
-                    padding-left: 0.2rem;
-                    padding-bottom: 0.6rem;
+                    padding-left: 0.5rem;
+                    padding-bottom: 0.9rem;
                     color: #00A859;
+                    font-size: 1.2rem;
                 }
             }   
         }

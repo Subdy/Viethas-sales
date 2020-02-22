@@ -15,6 +15,10 @@
                 box-shadow: 0vh 0.1vh 0vh 0.1vh #ddd;
                 border-radius: 10vh;
                 height: 5vw;
+                ion-item{
+                    --inner-padding-end: 0px;
+                    --padding-start:0.75rem;
+                }
                 .cal{
                     border-radius: 1rem;
                     ion-datetime{

@@ -26,7 +26,7 @@ export class AppComponent {
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.show();
-      this.statusBar.backgroundColorByHexString("00a859");
+      this.statusBar.backgroundColorByHexString("#00a859");
 
       this.splashScreen.hide();
       this.firebaseStorage.initialize("vhsales");

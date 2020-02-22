@@ -8,21 +8,21 @@
 </ion-header>
 
 <ion-content class="content-report-category">
-  <div class="general-content1">
-    <ion-segment class="chart-revenue" (ionChange)="segmentChanged($event)">
-      <ion-segment-button checked class="revenue-button" value="hours">
-        <ion-label>Giờ</ion-label>
-      </ion-segment-button>
-      <ion-segment-button class="revenue-button" value="day">
-        <ion-label>Ngày</ion-label>
-      </ion-segment-button>
-      <ion-segment-button class="revenue-button" value="mouth">
-        <ion-label>Tháng</ion-label>
-      </ion-segment-button>
-      <ion-segment-button class="revenue-button" value="year">
-        <ion-label>Năm</ion-label>
-      </ion-segment-button>
-    </ion-segment>
+  <div class="general-content1" >
+    <div class="ct-button">
+      <div (click)="setActive1()" [className]="condition1 ? 'segment active' : 'segment'" >
+        <label>giờ</label>
+      </div>
+      <div (click)="setActive2()" [className]="condition2 ? 'segment active' : 'segment'" >
+        <label>ngày</label>
+      </div>
+      <div (click)="setActive3()" [className]="condition3 ? 'segment active' : 'segment'">
+        <label>tháng</label>
+      </div>
+      <div (click)="setActive4()" [className]="condition4 ? 'segment active' : 'segment'">
+        <label>năm</label>
+      </div>
+    </div>
   </div>
   <div class="calendar">
     <ion-grid>

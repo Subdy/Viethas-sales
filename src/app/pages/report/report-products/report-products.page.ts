@@ -7,7 +7,9 @@ import { Chart } from "chart.js";
 })
 export class ReportProductsPage {
   @ViewChild("pieCanvas", { static: false }) pieCanvas;
-
+  condition1 : boolean = true;
+  condition2 : boolean = false;
+  condition3 :boolean = false;
   cao: number = 200;
   doughnutChart: any;
   data_total: Array<any> = [45, 23, 44, 65, 54, 33];
@@ -51,6 +53,22 @@ export class ReportProductsPage {
     }
   ];
   constructor() {}
+
+  setActive1(){
+    this.condition1 = true;
+    this.condition2 = false;
+    this.condition3 = false;
+  }
+  setActive2(){
+    this.condition2 = true;
+    this.condition1 = false;
+    this.condition3 = false;
+  }
+  setActive3(){
+    this.condition3 = true;
+    this.condition1 = false;
+    this.condition2 = false;
+  }
 
   ionViewDidEnter() {
     this.createBarChart();
